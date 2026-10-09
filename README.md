@@ -1,82 +1,139 @@
-# Berhane OS: Predictive IMM Scoring & Capital Terminal
-### PISCES 2.0 // Ethiopian & Pan-African Private Intermittent Securities Platform
+# PISCES 2.0: E-PSM Unity Interface // Berhane OS
+### Ethiopian Private Intermittent Securities Capital Exchange System
+#### Powered by the Ardi Intelligence Engine & ECMA Regulatory Moat
 
-[![ECMA Compliant](https://img.shields.io/badge/Regulatory-ECMA%20Proclamation%201248%2F2021-emerald)](https://ecma.gov.et)
-[![Platform](https://img.shields.io/badge/Platform-PISCES%202.0-blue)](#)
+[![ECMA Statutory Moat](https://img.shields.io/badge/Statutory%20Framework-ECMA%20Proclamation%201248%2F2021-emerald)](https://ecma.gov.et)
+[![Architecture](https://img.shields.io/badge/Architecture-PISCES%202.0%20%2F%2F%20Berhane%20OS-blue)](#)
+[![Security Moat](https://img.shields.io/badge/Security-ECMA%20QIB%20Certification%20Gate-amber)](#)
 [![License](https://img.shields.io/badge/License-Apache%202.0-slate)](#)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-blue)](#)
-[![Vite](https://img.shields.io/badge/Bundler-Vite%206-purple)](#)
 
 ---
 
-## 🏛️ Executive Summary
+## 🏛️ System Overview
 
-**Berhane OS** is an institutional financial analytics and capital allocation terminal engineered for the **Ethiopian Private Intermittent Securities Capital Exchange System (PISCES 2.0)** and broader emerging capital markets. 
+**PISCES 2.0 (Ethiopian Private Intermittent Securities Capital Exchange System)** is the sovereign institutional control panel and capital orchestration terminal for private securities and debt syndication in Ethiopia. 
 
-Operating under the statutory framework of the **Ethiopian Capital Market Authority (ECMA Proclamation 1248/2021)**, Berhane OS bridges high-growth productive private enterprises with Qualified Institutional Buyers (QIBs), Sovereign Wealth Funds (Ethiopian Investment Holdings), and Development Finance Institutions (DFIs) through **Predictive Impact Measurement & Management (IMM) Scoring** and structured **Intermittent Call Auctions**.
-
----
-
-## 🎯 Key Innovation Modules
-
-### 1. Predictive IMM Scoring Engine (`Ardi Engine`)
-Evaluates enterprise issuance viability across five mathematically weighted dimensions:
-* **Cash Flow Predictability (CFP - 25% wgt)**: Revenue trajectory, EBITDA margins, and Debt Service Coverage Ratio (DSCR).
-* **Sovereign & FX Resilience (SFR - 25% wgt)**: Hard-currency export ratios, import substitution buffers, and tolerance to ETB/USD devaluation.
-* **Governance & Transparency (GTQ - 20% wgt)**: Tier-1 statutory audit standards, board independence, and continuous disclosure compliance.
-* **Impact & Additionality (IAM - 15% wgt)**: Quantifiable ESG additionality, smallholder outgrower integration, and domestic direct employment multipliers.
-* **Secondary Intermittent Auction Depth (SLAV - 15% wgt)**: Projected bid-ask depth and clearing viability in scheduled call auctions.
-
-$$\text{IMM Composite} = 0.25 \cdot \text{CFP} + 0.25 \cdot \text{SFR} + 0.20 \cdot \text{GTQ} + 0.15 \cdot \text{IAM} + 0.15 \cdot \text{SLAV}$$
-
-### 2. Macro Stress-Testing & Sensitivity Heatmap
-* **Real-Time Shock Simulation**: Model currency devaluation (0% to -50%), domestic debt interest surges (+0 to +600 bps), and inflation acceleration.
-* **Dynamic Rating Migration**: Visualizes credit tier migration (Prime Institutional Tier-A $\ge 82$, High-Yield Tier-B $68-81$, Structured Anchor Required Tier-C $<68$).
-* **Dual-Factor Heatmap**: Multi-scenario sensitivity grid mapping currency stress against interest rate spikes.
-
-### 3. Intermittent Call Auction Trading Desk
-* **Discrete Call Auctions**: Eliminates predatory continuous trading and high-frequency volatility for unlisted securities by aggregating institutional orders into scheduled bi-weekly clearing windows.
-* **Order Book & DvP Settlement**: Matched bid-ask clearing protocol with Delivery-versus-Payment (DvP) integration backed by National Bank custody reserves.
-
-### 4. Sovereign Crowd-In Tranche Structuring
-* **Multi-Tranche Waterfall**: Senior Secured Debt, Mezzanine Yield, First-Loss Sovereign Backstop, and Anchor Equity.
-* **Blended Cost of Capital Optimizer**: Calculates dynamic WACC and private capital mobilization multipliers (unlocking 5x–9x private institutional dollars per $1 of sovereign first-loss guarantee).
-
-### 5. ECMA Regulatory Moat & Supervisory Console
-* **Rule 144A Equivalent Restrictions**: Mandatory institutional accreditation enforcing minimum investable net worth thresholds ($2M+ USD).
-* **Automated Audit Logging**: Real-time surveillance tracking FX surrender ratios, unhedged balance sheet liabilities, and intermittent auction clearing invariants.
+Operating under the statutory mandate of the **Ethiopian Capital Market Authority (ECMA Proclamation 1248/2021)**, the platform enforces strict institutional accreditation moats and provides deterministic visualization and execution for sovereign alpha generated by the **Ardi Intelligence Engine**.
 
 ---
 
-## 📂 Project Architecture
+## 🛡️ Core Institutional Portals
+
+Access to PISCES 2.0 is strictly segmented by the **ECMA Certification Moat (`LoginGate`)** into three sovereign roles:
 
 ```
-/
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx                   # Top Bar Contract navigation
-│   │   ├── MetricCards.tsx              # Pipeline KPI telemetry strip
-│   │   ├── ImmScoringConsole.tsx        # Predictive IMM scoring & stress simulator
-│   │   ├── IssuerDirectory.tsx          # High-density institutional pipeline grid
-│   │   ├── AuctionDesk.tsx              # Intermittent call auction trading desk
-│   │   ├── TrancheCapitalAllocation.tsx # Sovereign crowd-in WACC optimizer
-│   │   ├── EcmaRegulatoryConsole.tsx    # Statutory compliance audit console
-│   │   └── IssuerDetailModal.tsx        # Prospectus dossier & downloadable memorandum
-│   ├── data/
-│   │   └── mockData.ts                  # Institutional issuers, orders, and audit trail
-│   ├── types/
-│   │   └── index.ts                     # Strong TypeScript domain contracts
-│   ├── utils/
-│   │   └── immScoring.ts                # Mathematical stress engine & sensitivity logic
-│   ├── App.tsx                          # Primary terminal container
-│   ├── index.css                        # Tailwind v4 custom theme & typography
-│   └── main.tsx                         # React entry point
-├── metadata.json                        # Applet identity & permissions
-├── index.html                           # Entry HTML & Plus Jakarta Sans / JetBrains Mono
-├── package.json                         # Dependencies & build scripts
-├── vite.config.ts                       # Vite configuration
-├── ARCHITECTURE.md                      # Detailed technical architecture guide
-└── README.md                            # Documentation
+                             ┌───────────────────────────────────────┐
+                             │       ECMA Certification Moat         │
+                             │  (Statutory Proclamation 1248/2021)   │
+                             └──────────────────┬────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌───────────────────────────┐      ┌───────────────────────────┐      ┌───────────────────────────┐
+│   QIB Investor Portal     │      │ Executive Governor Portal │      │   ECMA Regulator Portal   │
+│  (EpsmInvestorPortal)     │      │ (ExecutiveGovernorPortal) │      │ (DLTObserverConsolePortal)│
+├───────────────────────────┤      ├───────────────────────────┤      ├───────────────────────────┤
+│ • BPAS Asset Syndication  │      │ • WALTB Liquidity Backstop│      │ • DLT Settlement Observer │
+│ • Ardi IMM Predictive AI  │      │ • SGFC Sovereign Corridor │      │ • Rule 144A Surveillance  │
+│ • Intermittent Call Desk  │      │ • BGC Sovereign Treasury  │      │ • AML Audit Logs          │
+│ • Tranche Yield Selection │      │ • BTLF Bi-Currency Pricing│      │ • Invariant Verification  │
+└───────────────────────────┘      └───────────────────────────┘      └───────────────────────────┘
+```
+
+### 1. QIB Investor Portal (`EpsmInvestorPortal`)
+* **Target Audience**: Qualified Institutional Buyers (pension funds, insurance reserves, regional DFIs, licensed asset managers).
+* **Core Capabilities**:
+  * **BPAS (Bilateral Private Asset Syndication)**: Issuance origination, structured term sheets, and covenant configuration.
+  * **Predictive IMM Scoring**: Machine learning models evaluating Cash Flow Predictability, Sovereign FX Resilience, Governance Transparency, and Additionality.
+  * **Intermittent Auction Desk**: Scheduled call auction discovery preventing secondary liquidity fragmentation.
+
+### 2. Executive Governor Portal (`ExecutiveGovernorPortal`)
+* **Target Audience**: Sovereign Wealth Fund (Ethiopian Investment Holdings), National Bank of Ethiopia (NBE), and Ministry of Finance governors.
+* **Core Capabilities**:
+  * **WALTB (Warehouse Asset-Backed Liquidity & Tranche Backstop)**: Liquidity deployment consoles and sovereign balance sheet guarantees.
+  * **SGFC (Sovereign Guaranteed Financial Corridor)**: Cross-border corridor blueprints and integration infrastructure.
+  * **BGC (Berhane Governance Council)**: Treasury allocation, budget governance, and stabilization reserves.
+  * **BTLF (Bi-currency Treasury Liquidity Facility)**: Dual-currency ETB/USD custody vaults and exchange rate buffer modeling.
+
+### 3. ECMA Regulator Portal (`DLTObserverConsolePortal`)
+* **Target Audience**: Ethiopian Capital Market Authority (ECMA) surveillance officers and statutory auditors.
+* **Core Capabilities**:
+  * **DLT & CSD Settlement Observer**: Real-time transaction finality inspection across primary issuance and secondary call auctions.
+  * **Rule 144A Accreditation Enforcement**: Cryptographic verification that no unaccredited retail capital enters private placement books.
+  * **Regulatory Proposals & Directives**: Proposal voting, sandbox exemptions, and statutory compliance certification.
+
+---
+
+## ⚙️ Core System Pillars & Functional Modules
+
+| Pillar / Module | Full System Name | Primary Function |
+| :--- | :--- | :--- |
+| **Ardi Engine** | Ardi Intelligence Scoring Engine | Predictive IMM credit decisioning, ecosystem resilience modeling, and Tri-Alpha calculation. |
+| **BPAS** | Bilateral Private Asset Syndication | Structured term sheets, private placement memorandums, and covenant execution. |
+| **WALTB** | Warehouse Asset-Backed Liquidity & Tranche Backstop | Sovereign first-loss facilities de-risking senior institutional debt tranches. |
+| **SGFC** | Sovereign Guaranteed Financial Corridor | Cross-border institutional financial routing and regional DFI syndicate coordination. |
+| **BTLF** | Bi-currency Treasury Liquidity Facility | Dual-currency pricing console, NBE foreign exchange retention management, and ETB/USD hedging. |
+| **BGC** | Berhane Governance Council | Sovereign treasury management, budget panel, and stability fund allocation. |
+| **CCAS** | Cross-Currency Asset Settlement Protocol | Multi-currency DvP (Delivery vs. Payment) settlement engine between local ETB and offshore USD accounts. |
+| **GRE** | Global Replication Engine | Multi-jurisdiction financial architecture replication across EAC and COMESA member states. |
+
+---
+
+## 📐 Mathematical Formulation: Ardi Engine IMM Scoring
+
+The Ardi Engine scores private issuance eligibility across three core dimensions (**Tri-Alpha**):
+
+$$\text{Tri-Alpha} = 0.40 \cdot \alpha_{\text{operational}} + 0.30 \cdot \alpha_{\text{resilience}} + 0.30 \cdot \alpha_{\text{behavioral}}$$
+
+Under the Intermittent Market Mechanism (IMM), the composite credit index $S_{\text{IMM}} \in [0, 100]$ is evaluated against macroeconomic shocks:
+
+$$S_{\text{IMM}} = w_{\text{CFP}} \cdot s_{\text{CFP}} + w_{\text{SFR}} \cdot s_{\text{SFR}} + w_{\text{GTQ}} \cdot s_{\text{GTQ}} + w_{\text{IAM}} \cdot s_{\text{IAM}} + w_{\text{SLAV}} \cdot s_{\text{SLAV}}$$
+
+* **Cash Flow Predictability ($w_{\text{CFP}} = 25\%$)**: Debt Service Coverage Ratio (DSCR), EBITDA margin stability, working capital runway.
+* **Sovereign & FX Resilience ($w_{\text{SFR}} = 25\%$)**: Export dollar earnings ratio vs. import dependency under ETB devaluation scenarios.
+* **Governance & Transparency ($w_{\text{GTQ}} = 20\%$)**: Audit tier classification (Tier-1 international vs. regional) and board independence.
+* **Impact & Additionality ($w_{\text{IAM}} = 15\%$)**: ESG additionality, employment creation multipliers, smallholder sourcing linkages.
+* **Secondary Liquidity & Auction Viability ($w_{\text{SLAV}} = 15\%$)**: Bid-ask depth and clearing viability in scheduled intermittent calls.
+
+---
+
+## 🏗️ Repository Structure
+
+```
+abeselomchernet/PISCES-2.0-E-PSM
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml                     # Continuous integration build & lint pipeline
+│   │   └── deploy-preview.yml         # Security & code quality audit
+│   ├── ISSUE_TEMPLATE/                # Bug report and feature request templates
+│   └── pull_request_template.md       # Institutional PR verification checklist
+├── .editorconfig                      # Code style standards
+├── ARCHITECTURE.md                    # Technical & financial mechanics documentation
+├── CONTRIBUTING.md                    # Developer contribution guidelines
+├── LICENSE                            # Apache 2.0 open-source license
+├── README.md                          # Primary platform documentation
+├── SECURITY.md                        # Institutional security disclosure policy
+├── metadata.json                      # AI Studio applet specifications
+├── index.html                         # Typography & viewport entry point
+├── package.json                       # Dependencies & build scripts
+├── tsconfig.json                      # Strict TypeScript compiler options
+├── vite.config.ts                     # Bundler configuration
+└── src/
+    ├── components/                    # Modular portal & pillar consoles
+    │   ├── Header.tsx                 # Top bar navigation & role switcher
+    │   ├── MetricCards.tsx            # Telemetry KPI band
+    │   ├── ImmScoringConsole.tsx      # Ardi Engine predictive IMM stress simulator
+    │   ├── IssuerDirectory.tsx        # BPAS qualified asset directory
+    │   ├── AuctionDesk.tsx            # Intermittent call auction desk
+    │   ├── TrancheCapitalAllocation.tsx # WALTB multi-tranche optimizer
+    │   ├── EcmaRegulatoryConsole.tsx  # DLT observer & compliance console
+    │   └── IssuerDetailModal.tsx      # Full underwriting prospectus dossier
+    ├── data/                          # Grounded market datasets & audit records
+    ├── types/                         # Strongly-typed domain models
+    ├── utils/                         # Ardi Engine scoring algorithms & stress math
+    ├── App.tsx                        # Master portal router & ECMA gate
+    ├── index.css                      # Tailwind v4 stylesheet
+    └── main.tsx                       # Mount root
 ```
 
 ---
@@ -91,58 +148,40 @@ $$\text{IMM Composite} = 0.25 \cdot \text{CFP} + 0.25 \cdot \text{SFR} + 0.20 \c
 
 ```bash
 # Clone the repository
-git clone https://github.com/abeselomchernet/PISCES-2.0-E-PSM-Unity-Interface.git
+git clone https://github.com/abeselomchernet/PISCES-2.0-E-PSM.git
 
-# Navigate to the workspace
-cd PISCES-2.0-E-PSM-Unity-Interface
+# Enter workspace
+cd PISCES-2.0-E-PSM
 
-# Install dependencies
-npm install
+# Install clean dependencies
+npm ci
 ```
 
-### Running Locally
+### Development Server
 
 ```bash
-# Start Vite development server on port 3000
 npm run dev
 ```
-
-Visit `http://localhost:3000` in your browser.
+Open `http://localhost:3000` to access the terminal.
 
 ### Production Build
 
 ```bash
-# Type check and build optimized bundle
-npm run build
-
-# Preview build locally
-npm run preview
+npm run lint     # TypeScript strict type check
+npm run build    # Compile production bundle
 ```
 
 ---
 
-## 📊 Sector Pipeline Coverage
+## 📜 Regulatory Mandate
 
-| Sector | Representative Issuer | Target Raise | FX Export Backing |
-| :--- | :--- | :--- | :--- |
-| **Agro-Industrial** | Awash Valley Agro-Industrial PLC | $24.5M USD | 78.5% |
-| **Renewable Energy** | Rift Solar Grid & Storage Corp | $45.0M USD | 42.0% |
-| **Cross-Border Logistics** | Red Sea Corridor Freight & Dry Port | $32.0M USD | 65.0% |
-| **Financial Infrastructure** | Habesha Switch & Settlement Infrastructure | $18.0M USD | 22.0% |
-| **Pharmaceuticals** | Horizon Active Pharma Ingredients (API) | $28.0M USD | 54.0% |
-| **Specialty Export** | Yirgacheffe Single-Origin Highlands Co. | $15.5M USD | 94.0% |
-
----
-
-## 📜 Regulatory Standard & Compliance
-
-Berhane OS adheres to:
-1. **Ethiopian Capital Market Authority (ECMA)** Proclamation No. 1248/2021.
-2. **National Bank of Ethiopia (NBE)** Foreign Exchange Directives on export revenue retention.
-3. **PISCES Intermittent Auction Standards**: Uniform price call auction discovery to mitigate illiquidity discounts.
+PISCES 2.0 is designed in accordance with:
+1. **Ethiopian Capital Market Authority (ECMA)** Capital Market Proclamation No. 1248/2021.
+2. **National Bank of Ethiopia (NBE)** Foreign Exchange Directives and Interbank Settlement Frameworks.
+3. **Personal Data Protection Proclamation (PDPP)** No. 1321/2024 for privacy-preserving DID vectors.
 
 ---
 
 ## 📄 License
 
-Distributed under the Apache 2.0 License. See `LICENSE` for details.
+Distributed under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
