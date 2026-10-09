@@ -1,0 +1,6 @@
+{
+  "name": "Berhane OS: Predictive IMM Scoring",
+  "description": "Institutional capital and sovereign issuance analytics terminal for private intermittent securities (PISCES), featuring predictive IMM scoring, FX shock resilience, and ECMA regulatory oversight.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
