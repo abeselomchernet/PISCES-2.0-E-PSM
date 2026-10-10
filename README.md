@@ -101,7 +101,7 @@ The interactive console provides five main modules designed for institutional wo
 2. **Issuer Directory (`src/components/IssuerDirectory.tsx`)**: Filter and sort the pipeline of synthetic private enterprise dossiers by sector, raise size, IMM score, and export revenue share. Click any issuer to inspect full financial parameters, debt service coverage (DSCR), and download JSON term sheets.
 3. **Auction Desk (`src/components/AuctionDesk.tsx`)**: Inspect the current synthetic order book across qualified investor types (QIB pensions, sovereign investors, DFIs) and stage new simulated bid/ask limit orders. Execute an illustrative clearing batch to observe simulated order matching.
 4. **Tranche Structuring (`src/components/TrancheCapitalAllocation.tsx`)**: Model blended finance capital waterfalls by adjusting Senior Secured, Mezzanine, and First-Loss Guarantee allocations. The calculator models resulting blended WACC and private capital mobilization multipliers.
-5. **Regulatory Observer (`src/components/RegulatoryObserverConsole.tsx`)**: Review simulated supervisory surveillance logs, test routine invariant verification audits, and export regulatory audit logs to CSV with reference to Ethiopian Capital Market Authority (ECMA) private placement context.
+5. **Regulatory Observer (`src/components/RegulatoryObserverConsole.tsx`)**: Explore a simulated supervisory-observer interface with synthetic surveillance logs, eligibility controls, and prototype invariant checks designed with reference to Ethiopian Capital Market Authority (ECMA) private placement context.
 
 Click the **“Guide”** button in the top navigation bar at any time to open the in-app orientation modal containing quick-start instructions, glossary definitions, and prototype evidence boundaries.
 
@@ -117,9 +117,9 @@ Core market-design abbreviations and specialist terms used throughout the reposi
 - **BPAS**: Bi-currency Preference Allocation Structure. Structured debt/equity model explored in the prototype.
 - **WALTB**: Warehouse Asset-Backed Liquidity & Tranche Backstop. *Conceptual architecture concept; not an active sovereign or institutional facility.*
 - **BTLF**: Bi-currency Treasury Liquidity Facility. *Proposed architecture concept exploring ETB and foreign-currency liquidity structures; not deployed infrastructure.*
-- **SGFC**: Sovereign Guarantee & First-Loss Cushion. *Conceptual credit enhancement model; no sovereign guarantee is issued or implied.*
+- **SGFC**: Sovereign Guaranteed Financial Corridor (SGFC). *A conceptual architecture term exploring a structured institutional/cross-border financial corridor. No sovereign guarantee, government commitment, live corridor, or institutional deployment is represented by this prototype.*
 - **CCAS**: Cross-Currency Asset Settlement. *Proposed settlement architecture concept; no live settlement rail is connected.*
-- **QIB**: Qualified Institutional Buyer. Institutional investor category (pension funds, insurance reserves, DFIs) modelled in simulated order entry.
+- **QIB**: Qualified Institutional Buyer (QIB). *A U.S.-origin institutional-investor classification used here as market-design shorthand/reference for sophisticated institutional participation. It should not be interpreted as an ECMA-issued Ethiopian legal classification or accreditation.*
 - **DFI**: Development Finance Institution. Multilateral or bilateral finance institutions modelled as illustrative junior risk absorbers or mezzanine anchors.
 - **ECMA**: Ethiopian Capital Market Authority. *Statutory regulatory context (Proclamation No. 1248/2021). The prototype is not operated, approved, certified, or endorsed by ECMA.*
 - **NBE**: National Bank of Ethiopia. *Central banking context referenced for foreign exchange and monetary parameters. No NBE integration exists.*
@@ -139,7 +139,7 @@ The broader E-PSM research blueprint explores several advanced infrastructure co
 1. **Algorithmic Call Auction Matching**: Discrete uniform clearing price discovery maximizing executed volume ($P^* = \arg\max_P \min(V_{\text{bid}}, V_{\text{ask}})$) without dealer front-running.
 2. **DvP Settlement Interfacing**: Bilateral Delivery-versus-Payment integration with national banking switches and central securities depositories.
 3. **Dual-Currency Custody Rails**: Formal foreign exchange custody accounts separating offshore USD investor capital from local ETB operational currency.
-4. **Institutional Accreditation Gate**: Formal cryptographic verification of Qualified Institutional Buyer (QIB) accreditation prior to order entry.
+4. **Institutional Accreditation Gate**: Exploration of cryptographic verification for institutional participant accreditation prior to order entry.
 
 ---
 

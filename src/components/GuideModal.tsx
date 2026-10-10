@@ -144,7 +144,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
                     Regulatory Observer
                   </div>
                   <p className="text-slate-300 pl-7">
-                    Explore an illustrative supervisory observer UX designed with reference to Ethiopian Capital Market Authority (ECMA) regulatory context. Review synthetic surveillance logs, export audit packages to CSV, and test an illustrative compliance validation check.
+                    Explore a simulated supervisory-observer interface with synthetic surveillance logs, eligibility controls, and prototype invariant checks designed with reference to Ethiopian Capital Market Authority (ECMA) private placement context.
                   </p>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
                 <div className="p-3 rounded-lg border border-slate-800 bg-slate-950/40 space-y-1">
                   <div className="font-semibold text-amber-400 font-mono text-xs">SGFC (Conceptual Architecture)</div>
                   <div className="text-[11px] text-slate-300">
-                    Sovereign Guarantee & First-Loss Cushion. An illustrative credit enhancement model; no sovereign guarantee is issued or implied.
+                    Sovereign Guaranteed Financial Corridor (SGFC). A conceptual architecture term exploring a structured institutional/cross-border financial corridor. No sovereign guarantee, government commitment, live corridor, or institutional deployment is represented by this prototype.
                   </div>
                 </div>
 
@@ -218,7 +218,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
                 <div className="p-3 rounded-lg border border-slate-800 bg-slate-950/40 space-y-1">
                   <div className="font-semibold text-emerald-400 font-mono text-xs">QIB</div>
                   <div className="text-[11px] text-slate-300">
-                    Qualified Institutional Buyer. Institutional investor category (e.g., pension funds, insurance firms, asset managers) modelled in simulated order placement.
+                    Qualified Institutional Buyer (QIB). A U.S.-origin institutional-investor classification used here as market-design shorthand/reference for sophisticated institutional participation. It should not be interpreted as an ECMA-issued Ethiopian legal classification or accreditation.
                   </div>
                 </div>
 
