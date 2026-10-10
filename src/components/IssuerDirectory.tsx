@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Issuer, Sector } from '../types';
 import { ISSUERS_DATA } from '../data/mockData';
 import { Search, ArrowUpRight, ArrowUpDown, Filter } from 'lucide-react';
+import { exportToCsv, exportToJson } from '../utils/exportUtils';
+import { ExportDropdown } from './ExportDropdown';
 
 interface IssuerDirectoryProps {
   onSelectIssuer: (issuer: Issuer) => void;
@@ -50,6 +52,76 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
     }
   };
 
+  const handleExportIssuersCsv = () => {
+    const headers = [
+      'Issuer ID',
+      'Legal Entity Name',
+      'Security Ticker',
+      'Sector',
+      'Region',
+      'Vintage Year',
+      'Target Raise (USD)',
+      'Target Raise (ETB)',
+      'IMM Score',
+      'Rating Tier',
+      'DSCR Coverage Ratio',
+      'Export Revenue Share (%)',
+      'Annual Revenue (USD)',
+      'Revenue Growth YoY (%)',
+      'EBITDA Margin (%)',
+      'Working Capital Runway (Months)',
+      'Total Debt (USD)',
+      'ECMA Regulatory Status',
+      'Audit Partner',
+      'Next Auction Date',
+    ];
+
+    const rows = filteredIssuers.map((issuer) => [
+      issuer.id,
+      issuer.name,
+      issuer.ticker,
+      issuer.sector,
+      issuer.region,
+      issuer.vintageYear,
+      issuer.targetRaiseUSD,
+      issuer.targetRaiseETB,
+      issuer.immScore,
+      issuer.immTier,
+      issuer.financials.debtServiceCoverageRatio,
+      issuer.financials.exportRevenueSharePct,
+      issuer.financials.annualRevenueUSD,
+      issuer.financials.revenueGrowthYoY,
+      issuer.financials.ebitdaMarginPct,
+      issuer.financials.workingCapitalRunwayMonths,
+      issuer.financials.totalDebtUSD,
+      issuer.ecmaStatus,
+      issuer.auditPartner,
+      issuer.nextAuctionDate,
+    ]);
+
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const filterSuffix = selectedSector !== 'all' ? `_${selectedSector.replace(/\s+/g, '_')}` : '';
+    exportToCsv(`PISCES_Issuers_Pipeline${filterSuffix}_${dateStr}.csv`, headers, rows);
+  };
+
+  const handleExportIssuersJson = () => {
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const filterSuffix = selectedSector !== 'all' ? `_${selectedSector.replace(/\s+/g, '_')}` : '';
+    exportToJson(`PISCES_Issuers_Pipeline${filterSuffix}_${dateStr}.json`, {
+      exchange: 'PISCES 2.0 (E-PSM)',
+      proclamationCompliance: 'Proclamation 1248/2021',
+      exportedAt: new Date().toISOString(),
+      currentFilters: {
+        sector: selectedSector,
+        searchQuery: searchQuery || null,
+        sortBy,
+        sortOrder,
+      },
+      totalRecordsInView: filteredIssuers.length,
+      issuers: filteredIssuers,
+    });
+  };
+
   const sectors: Sector[] = [
     'Agro-Industrial',
     'Renewable Energy',
@@ -72,7 +144,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
@@ -80,9 +152,15 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
               placeholder="Search ticker, company..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-slate-950 border border-slate-800 text-xs text-slate-200 rounded-lg pl-9 pr-3 py-2 w-64 focus:outline-none focus:border-emerald-500 font-mono"
+              className="bg-slate-950 border border-slate-800 text-xs text-slate-200 rounded-lg pl-9 pr-3 py-2 w-56 focus:outline-none focus:border-emerald-500 font-mono"
             />
           </div>
+          <ExportDropdown
+            label="Export Data"
+            count={filteredIssuers.length}
+            onExportCsv={handleExportIssuersCsv}
+            onExportJson={handleExportIssuersJson}
+          />
         </div>
       </div>
 

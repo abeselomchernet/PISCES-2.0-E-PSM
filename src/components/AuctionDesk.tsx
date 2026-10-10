@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { AuctionOrder } from '../types';
 import { MOCK_AUCTION_ORDERS, ISSUERS_DATA } from '../data/mockData';
 import { ArrowUpDown, CheckCircle2, Clock, Plus, DollarSign, Layers } from 'lucide-react';
+import { exportToCsv, exportToJson } from '../utils/exportUtils';
+import { ExportDropdown } from './ExportDropdown';
 
 export const AuctionDesk: React.FC = () => {
   const [orders, setOrders] = useState<AuctionOrder[]>(MOCK_AUCTION_ORDERS);
@@ -56,6 +58,51 @@ export const AuctionDesk: React.FC = () => {
 
   const totalVolumeUSD = orders.reduce((sum, o) => sum + o.totalValueUSD, 0);
 
+  const handleExportOrdersCsv = () => {
+    const headers = [
+      'Order ID',
+      'Participant Institution',
+      'Investor Category',
+      'Order Side',
+      'Security Ticker',
+      'Limit Unit Price (USD)',
+      'Volume (Units)',
+      'Total Notional Value (USD)',
+      'Logged Timestamp (UTC)',
+      'Execution Status',
+    ];
+    const rows = orders.map((ord) => [
+      ord.id,
+      ord.investorName,
+      ord.investorType,
+      ord.type,
+      ord.securityTicker,
+      ord.unitPriceUSD,
+      ord.volumeUnits,
+      ord.totalValueUSD,
+      ord.timestamp,
+      ord.status,
+    ]);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    exportToCsv(`PISCES_Auction_OrderBook_${dateStr}.csv`, headers, rows);
+  };
+
+  const handleExportOrdersJson = () => {
+    const dateStr = new Date().toISOString().slice(0, 10);
+    exportToJson(`PISCES_Auction_OrderBook_${dateStr}.json`, {
+      exchange: 'PISCES 2.0 (E-PSM)',
+      system: 'Ardi Intermittent Clearing Engine',
+      exportedAt: new Date().toISOString(),
+      metrics: {
+        totalBookValueUSD: totalVolumeUSD,
+        totalOrdersCount: orders.length,
+        totalBidVolumeUnits: totalBidVolume,
+        totalAskVolumeUnits: totalAskVolume,
+      },
+      orders,
+    });
+  };
+
   return (
     <div className="space-y-6">
       {/* Top Banner */}
@@ -73,7 +120,13 @@ export const AuctionDesk: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
+          <ExportDropdown
+            label="Export Orders"
+            count={orders.length}
+            onExportCsv={handleExportOrdersCsv}
+            onExportJson={handleExportOrdersJson}
+          />
           <button
             onClick={() => setShowOrderModal(true)}
             className="px-4 py-2.5 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
@@ -134,12 +187,20 @@ export const AuctionDesk: React.FC = () => {
 
       {/* Order Book Table */}
       <div className="rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
-        <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <h3 className="text-sm font-semibold text-white">Institutional Intermittent Order Book</h3>
             <span className="text-xs text-slate-400 font-mono">({orders.length} Orders Logged)</span>
           </div>
-          <span className="text-xs text-slate-400 font-mono">ECMA Blind-Auction Protected</span>
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-slate-400 font-mono hidden sm:inline">ECMA Blind-Auction Protected</span>
+            <ExportDropdown
+              label="Export Table"
+              count={orders.length}
+              onExportCsv={handleExportOrdersCsv}
+              onExportJson={handleExportOrdersJson}
+            />
+          </div>
         </div>
 
         <div className="overflow-x-auto">
