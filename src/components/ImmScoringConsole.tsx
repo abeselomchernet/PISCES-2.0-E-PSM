@@ -3,6 +3,7 @@ import { Issuer, ImmStressParameters } from '../types';
 import { ISSUERS_DATA } from '../data/mockData';
 import { calculateStressedImmScore, generateSensitivityMatrix, getImmTier, IMM_WEIGHTS } from '../utils/immScoring';
 import { Sliders, RefreshCw, AlertTriangle, TrendingDown, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { InfoTooltip } from './InfoTooltip';
 
 interface ImmScoringConsoleProps {
   onSelectIssuer: (issuer: Issuer) => void;
@@ -78,10 +79,10 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
             ARDI ANALYTICAL ENGINE // SCENARIO ALLOCATION PROTOTYPE
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-white mt-1">
-            IMM Stress Scenario & Issuer Analysis
+            Intermittent Market Mechanism (IMM) Stress Scenario & Issuer Analysis
           </h2>
           <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            Simulate macroeconomic shocks across currency devaluation, domestic inflation, and debt service 
+            Simulate macroeconomic shocks across foreign exchange (FX) devaluation, domestic inflation, and debt service 
             coverage to observe modelled score migration across illustrative institutional tranches.
           </p>
         </div>
@@ -307,17 +308,24 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
           {/* Hero Score Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between">
-              <div className="text-xs text-slate-400 font-medium">Base IMM Score</div>
+              <div className="text-xs text-slate-400 font-medium flex items-center">
+                <span>Base IMM Score</span>
+                <InfoTooltip text="IMM Score: analytical multi-factor composite score (0–100) based on weighted operational and macro dimensions." />
+              </div>
               <div className="mt-2 text-3xl font-bold font-mono tabular-nums text-white">
                 {activeIssuer.immScore}
               </div>
-              <div className="mt-2 text-xs text-slate-400">
-                {getImmTier(activeIssuer.immScore)}
+              <div className="mt-2 text-xs text-slate-400 flex items-center">
+                <span>{getImmTier(activeIssuer.immScore)}</span>
+                <InfoTooltip text="Model Tier A/B/C: internal prototype classification based on the deterministic IMM score; not an external credit rating." />
               </div>
             </div>
 
             <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between">
-              <div className="text-xs text-slate-400 font-medium">Stressed IMM Score</div>
+              <div className="text-xs text-slate-400 font-medium flex items-center">
+                <span>Stressed IMM Score</span>
+                <InfoTooltip text="Stressed IMM Score: modelled score outcome under the simulated macroeconomic shocks." />
+              </div>
               <div className={`mt-2 text-3xl font-bold font-mono tabular-nums ${
                 simulation.stressedScore >= 80 ? 'text-emerald-400' : simulation.stressedScore >= 68 ? 'text-amber-400' : 'text-rose-400'
               }`}>

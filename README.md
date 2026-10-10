@@ -77,17 +77,58 @@ The application is structured as a unified institutional single-page console in 
 
 ```
 src/App.tsx (Master Layout & State)
-├── Header.tsx (Navigation & Public Prototype Status Badge)
-├── MetricCards.tsx (Illustrative Aggregate KPI Overview)
+├── Header.tsx (Navigation, Guide Control & Public Prototype Status Badge)
+├── MetricCards.tsx (Illustrative Aggregate KPI Overview & Info Tooltips)
 ├── Dynamic Tab Views:
 │   ├── ImmScoringConsole.tsx (Analytical Scoring & Macroeconomic Stress Grid)
 │   ├── IssuerDirectory.tsx (Pipeline Directory, Filters & Search)
 │   ├── AuctionDesk.tsx (Order Staging & Simulated Clearing Workflow)
 │   ├── TrancheCapitalAllocation.tsx (Interactive Capital Waterfall & Blended Yield)
 │   └── RegulatoryObserverConsole.tsx (Regulatory Observer UX & Simulated Surveillance Log)
+├── GuideModal.tsx (In-App Architecture Guide, Quick Start & Glossary)
+├── InfoTooltip.tsx (Lightweight Technical Metric Definitions)
 ├── IssuerDetailModal.tsx (Detailed Term Sheet Dossier & Prospectus Download)
 └── Footer (Regulatory Context Reference & Prototype Notice)
 ```
+
+---
+
+## Using the Prototype
+
+The interactive console provides five main modules designed for institutional workflow exploration:
+
+1. **IMM Scoring (`src/components/ImmScoringConsole.tsx`)**: Select an illustrative issuer and modify macroeconomic shock sliders (foreign exchange devaluation, domestic debt cost surges, CPI inflation). The console recalculates the deterministic 5-factor weighted IMM score and updates a 2D sensitivity heatmap in real time.
+2. **Issuer Directory (`src/components/IssuerDirectory.tsx`)**: Filter and sort the pipeline of synthetic private enterprise dossiers by sector, raise size, IMM score, and export revenue share. Click any issuer to inspect full financial parameters, debt service coverage (DSCR), and download JSON term sheets.
+3. **Auction Desk (`src/components/AuctionDesk.tsx`)**: Inspect the current synthetic order book across qualified investor types (QIB pensions, sovereign investors, DFIs) and stage new simulated bid/ask limit orders. Execute an illustrative clearing batch to observe simulated order matching.
+4. **Tranche Structuring (`src/components/TrancheCapitalAllocation.tsx`)**: Model blended finance capital waterfalls by adjusting Senior Secured, Mezzanine, and First-Loss Guarantee allocations. The calculator models resulting blended WACC and private capital mobilization multipliers.
+5. **Regulatory Observer (`src/components/RegulatoryObserverConsole.tsx`)**: Review simulated supervisory surveillance logs, test routine invariant verification audits, and export regulatory audit logs to CSV with reference to Ethiopian Capital Market Authority (ECMA) private placement context.
+
+Click the **“Guide”** button in the top navigation bar at any time to open the in-app orientation modal containing quick-start instructions, glossary definitions, and prototype evidence boundaries.
+
+---
+
+## Glossary & Terminology
+
+Core market-design abbreviations and specialist terms used throughout the repository:
+
+- **PISCES**: Private Intermittent Securities and Capital Exchange System. UK-origin regulatory model adapted here for intermittent emerging-market private equity/debt liquidity.
+- **E-PSM**: Ethiopian Private Securities Market. Research concept for intermittent auction liquidity in unlisted growth and productive enterprises.
+- **IMM**: Intermittent Market Mechanism. A periodic call-auction market design combining multi-factor stress analysis with batch clearing instead of continuous trading.
+- **BPAS**: Bi-currency Preference Allocation Structure. Structured debt/equity model explored in the prototype.
+- **WALTB**: Warehouse Asset-Backed Liquidity & Tranche Backstop. *Conceptual architecture concept; not an active sovereign or institutional facility.*
+- **BTLF**: Bi-currency Treasury Liquidity Facility. *Proposed architecture concept exploring ETB and foreign-currency liquidity structures; not deployed infrastructure.*
+- **SGFC**: Sovereign Guarantee & First-Loss Cushion. *Conceptual credit enhancement model; no sovereign guarantee is issued or implied.*
+- **CCAS**: Cross-Currency Asset Settlement. *Proposed settlement architecture concept; no live settlement rail is connected.*
+- **QIB**: Qualified Institutional Buyer. Institutional investor category (pension funds, insurance reserves, DFIs) modelled in simulated order entry.
+- **DFI**: Development Finance Institution. Multilateral or bilateral finance institutions modelled as illustrative junior risk absorbers or mezzanine anchors.
+- **ECMA**: Ethiopian Capital Market Authority. *Statutory regulatory context (Proclamation No. 1248/2021). The prototype is not operated, approved, certified, or endorsed by ECMA.*
+- **NBE**: National Bank of Ethiopia. *Central banking context referenced for foreign exchange and monetary parameters. No NBE integration exists.*
+- **CSD**: Central Securities Depository. *External market infrastructure concept; not connected to this prototype.*
+- **DvP**: Delivery versus Payment. *Securities settlement principle where securities transfer occurs only if payment occurs. All DvP states in this prototype are entirely simulated.*
+- **DSCR**: Debt Service Coverage Ratio. Measure of annual operational cash flow available to service principal and interest debt obligations (EBITDA / Total Debt Service).
+- **WACC**: Weighted Average Cost of Capital. Blended financing cost across senior debt, mezzanine, and first-loss equity or guarantee tranches.
+- **FX**: Foreign Exchange. Hard-currency earnings buffering local currency devaluations.
+- **ETB**: Ethiopian Birr. Local operational currency used alongside USD raise targets.
 
 ---
 

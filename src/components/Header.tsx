@@ -1,13 +1,19 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, HelpCircle } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: 'scoring' | 'issuers' | 'auction' | 'tranches' | 'ecma';
   setActiveTab: (tab: 'scoring' | 'issuers' | 'auction' | 'tranches' | 'ecma') => void;
   onOpenStressTest: () => void;
+  onOpenGuide?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenStressTest }) => {
+export const Header: React.FC<HeaderProps> = ({
+  activeTab,
+  setActiveTab,
+  onOpenStressTest,
+  onOpenGuide,
+}) => {
   return (
     <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
@@ -85,11 +91,21 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenS
           </button>
         </nav>
 
-        {/* Zone 3: Single Primary Action */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Zone 3: Actions */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {onOpenGuide && (
+            <button
+              onClick={onOpenGuide}
+              className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <HelpCircle className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Guide</span>
+            </button>
+          )}
+
           <button
             onClick={onOpenStressTest}
-            className="px-4 py-2 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors whitespace-nowrap shadow-sm shadow-emerald-500/10 cursor-pointer"
+            className="px-3 sm:px-4 py-2 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors whitespace-nowrap shadow-sm shadow-emerald-500/10 cursor-pointer"
           >
             Simulate Macro Shock
           </button>
@@ -97,37 +113,47 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenS
       </div>
       
       {/* Mobile nav bar for small viewports */}
-      <div className="md:hidden flex overflow-x-auto border-t border-slate-800/80 px-4 py-2 gap-4 text-xs font-medium text-slate-400 no-scrollbar">
-        <button
-          onClick={() => setActiveTab('scoring')}
-          className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'scoring' ? 'text-emerald-400 font-semibold' : ''}`}
-        >
-          IMM Scoring
-        </button>
-        <button
-          onClick={() => setActiveTab('issuers')}
-          className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'issuers' ? 'text-emerald-400 font-semibold' : ''}`}
-        >
-          Pipeline
-        </button>
-        <button
-          onClick={() => setActiveTab('auction')}
-          className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'auction' ? 'text-emerald-400 font-semibold' : ''}`}
-        >
-          Auctions
-        </button>
-        <button
-          onClick={() => setActiveTab('tranches')}
-          className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'tranches' ? 'text-emerald-400 font-semibold' : ''}`}
-        >
-          Tranches
-        </button>
-        <button
-          onClick={() => setActiveTab('ecma')}
-          className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'ecma' ? 'text-emerald-400 font-semibold' : ''}`}
-        >
-          Observer
-        </button>
+      <div className="md:hidden flex items-center justify-between overflow-x-auto border-t border-slate-800/80 px-4 py-2 text-xs font-medium text-slate-400 no-scrollbar">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => setActiveTab('scoring')}
+            className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'scoring' ? 'text-emerald-400 font-semibold' : ''}`}
+          >
+            IMM Scoring
+          </button>
+          <button
+            onClick={() => setActiveTab('issuers')}
+            className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'issuers' ? 'text-emerald-400 font-semibold' : ''}`}
+          >
+            Pipeline
+          </button>
+          <button
+            onClick={() => setActiveTab('auction')}
+            className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'auction' ? 'text-emerald-400 font-semibold' : ''}`}
+          >
+            Auctions
+          </button>
+          <button
+            onClick={() => setActiveTab('tranches')}
+            className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'tranches' ? 'text-emerald-400 font-semibold' : ''}`}
+          >
+            Tranches
+          </button>
+          <button
+            onClick={() => setActiveTab('ecma')}
+            className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'ecma' ? 'text-emerald-400 font-semibold' : ''}`}
+          >
+            Observer
+          </button>
+        </div>
+        {onOpenGuide && (
+          <button
+            onClick={onOpenGuide}
+            className="text-emerald-400 font-medium ml-2 px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 shrink-0"
+          >
+            Guide
+          </button>
+        )}
       </div>
     </header>
   );

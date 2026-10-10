@@ -416,7 +416,7 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
     volumeUnits: 30000,
     totalValueUSD: 3033000,
     timestamp: '2026-10-09 12:38 UTC',
-    status: 'Settled DvP',
+    status: 'Simulated DvP',
   },
   {
     id: 'ord-804',

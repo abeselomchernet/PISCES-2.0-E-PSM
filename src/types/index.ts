@@ -1,4 +1,4 @@
-export type EligibilityStatus = 'Prototype Eligibility — Cleared' | 'Provisional Review' | 'Audited Placed';
+export type EligibilityStatus = 'Prototype Eligibility — Cleared' | 'Provisional Review' | 'Audit Review Complete';
 export type EcmaStatus = EligibilityStatus; // Backwards-compatibility alias
 
 export type ImmTier = 'Model Tier A' | 'Model Tier B' | 'Model Tier C';
@@ -87,7 +87,7 @@ export interface AuctionOrder {
   volumeUnits: number;
   totalValueUSD: number;
   timestamp: string;
-  status: 'Matched' | 'Pending Call' | 'Settled DvP';
+  status: 'Matched' | 'Pending Call' | 'Simulated DvP';
 }
 
 export interface RegulatoryObserverLog {

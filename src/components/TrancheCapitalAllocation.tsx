@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ISSUERS_DATA } from '../data/mockData';
 import { Layers, ShieldCheck, PieChart, TrendingUp } from 'lucide-react';
+import { InfoTooltip } from './InfoTooltip';
 
 export const TrancheCapitalAllocation: React.FC = () => {
   const [selectedIssuerId, setSelectedIssuerId] = useState<string>(ISSUERS_DATA[0].id);
@@ -73,7 +74,10 @@ export const TrancheCapitalAllocation: React.FC = () => {
       {/* Hero Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
-          <div className="text-xs text-slate-400">Blended Capital Cost (WACC)</div>
+          <div className="text-xs text-slate-400 flex items-center">
+            <span>Weighted Average Cost of Capital (WACC)</span>
+            <InfoTooltip text="Weighted Average Cost of Capital (WACC): the blended financing cost across the capital structure." />
+          </div>
           <div className="mt-2 text-3xl font-bold font-mono tabular-nums text-emerald-400">
             {blendedWACC}%
           </div>
@@ -93,7 +97,10 @@ export const TrancheCapitalAllocation: React.FC = () => {
         </div>
 
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
-          <div className="text-xs text-slate-400">First-Loss Cushion</div>
+          <div className="text-xs text-slate-400 flex items-center">
+            <span>First-Loss Cushion</span>
+            <InfoTooltip text="First-Loss Cushion: an illustrative junior risk layer designed to absorb losses before senior tranches." />
+          </div>
           <div className="mt-2 text-3xl font-bold font-mono tabular-nums text-slate-200">
             ${(firstLossAmount / 1000000).toFixed(2)}M
           </div>

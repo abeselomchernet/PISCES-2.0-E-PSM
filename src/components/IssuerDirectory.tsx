@@ -4,6 +4,7 @@ import { ISSUERS_DATA } from '../data/mockData';
 import { Search, ArrowUpRight, ArrowUpDown, Filter } from 'lucide-react';
 import { exportToCsv, exportToJson } from '../utils/exportUtils';
 import { ExportDropdown } from './ExportDropdown';
+import { InfoTooltip } from './InfoTooltip';
 
 interface IssuerDirectoryProps {
   onSelectIssuer: (issuer: Issuer) => void;
@@ -206,6 +207,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
                   <div className="flex items-center gap-1">
                     <span>IMM Score</span>
                     <ArrowUpDown className="w-3 h-3" />
+                    <InfoTooltip text="Intermittent Market Mechanism (IMM) Score: composite weighted operational & macro resilience score." />
                   </div>
                 </th>
                 <th
@@ -224,9 +226,15 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
                   <div className="flex items-center gap-1">
                     <span>Export FX</span>
                     <ArrowUpDown className="w-3 h-3" />
+                    <InfoTooltip text="Foreign Exchange (FX): share of top-line revenue earned directly in hard currency." />
                   </div>
                 </th>
-                <th className="py-3 px-4">DSCR Coverage</th>
+                <th className="py-3 px-4">
+                  <div className="flex items-center">
+                    <span>Debt Service Coverage Ratio (DSCR)</span>
+                    <InfoTooltip text="Debt Service Coverage Ratio (DSCR): a measure of operational cash flow available to service principal & interest debt obligations." />
+                  </div>
+                </th>
                 <th className="py-3 px-4">Eligibility / Audit Status</th>
                 <th className="py-3 px-4">Next Auction</th>
                 <th className="py-3 px-4 text-right">Actions</th>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Issuer } from '../types';
 import { X, Download, ShieldCheck, CheckCircle2, TrendingUp, DollarSign, Globe, Award } from 'lucide-react';
 import { getImmTier } from '../utils/immScoring';
+import { InfoTooltip } from './InfoTooltip';
 
 interface IssuerDetailModalProps {
   issuer: Issuer | null;
@@ -80,7 +81,10 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
           {/* Key Metrics Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
             <div className="p-3 rounded-xl border border-slate-800 bg-slate-950/40">
-              <div className="text-slate-400 text-[11px]">Composite IMM Score</div>
+              <div className="text-slate-400 text-[11px] flex items-center">
+                <span>Composite IMM Score</span>
+                <InfoTooltip text="Intermittent Market Mechanism (IMM) Score: multi-factor deterministic score." />
+              </div>
               <div className="text-2xl font-bold text-emerald-400 mt-1 tabular-nums">
                 {issuer.immScore}
               </div>
@@ -96,7 +100,10 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
             </div>
 
             <div className="p-3 rounded-xl border border-slate-800 bg-slate-950/40">
-              <div className="text-slate-400 text-[11px]">Export Revenue Backing</div>
+              <div className="text-slate-400 text-[11px] flex items-center">
+                <span>Export Revenue Backing</span>
+                <InfoTooltip text="FX Resilience: proportion of top-line revenues generated in USD / convertible foreign exchange." />
+              </div>
               <div className="text-2xl font-bold text-white mt-1 tabular-nums">
                 {issuer.financials.exportRevenueSharePct}%
               </div>
@@ -104,7 +111,10 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
             </div>
 
             <div className="p-3 rounded-xl border border-slate-800 bg-slate-950/40">
-              <div className="text-slate-400 text-[11px]">Debt Service Coverage</div>
+              <div className="text-slate-400 text-[11px] flex items-center">
+                <span>Debt Service Coverage (DSCR)</span>
+                <InfoTooltip text="Debt Service Coverage Ratio (DSCR): operational cash flow available to meet principal and interest debt payments." />
+              </div>
               <div className="text-2xl font-bold text-emerald-400 mt-1 tabular-nums">
                 {issuer.financials.debtServiceCoverageRatio}x
               </div>

@@ -7,12 +7,14 @@ import { AuctionDesk } from './components/AuctionDesk';
 import { TrancheCapitalAllocation } from './components/TrancheCapitalAllocation';
 import { RegulatoryObserverConsole } from './components/RegulatoryObserverConsole';
 import { IssuerDetailModal } from './components/IssuerDetailModal';
+import { GuideModal } from './components/GuideModal';
 import { Issuer } from './types';
 import { ISSUERS_DATA } from './data/mockData';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'scoring' | 'issuers' | 'auction' | 'tranches' | 'ecma'>('scoring');
   const [selectedIssuer, setSelectedIssuer] = useState<Issuer | null>(null);
+  const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
 
   const handleOpenStressTestForIssuer = (issuer: Issuer) => {
     setActiveTab('scoring');
@@ -27,6 +29,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenStressTest={() => setActiveTab('scoring')}
+        onOpenGuide={() => setIsGuideOpen(true)}
       />
 
       {/* Main Workspace Viewport */}
@@ -60,6 +63,12 @@ export default function App() {
         issuer={selectedIssuer}
         onClose={() => setSelectedIssuer(null)}
         onOpenStressTest={handleOpenStressTestForIssuer}
+      />
+
+      {/* In-App Architecture & Prototype Guide */}
+      <GuideModal
+        isOpen={isGuideOpen}
+        onClose={() => setIsGuideOpen(false)}
       />
 
       {/* Subtle Institutional Footer */}

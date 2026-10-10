@@ -4,6 +4,7 @@ import { MOCK_AUCTION_ORDERS, ISSUERS_DATA } from '../data/mockData';
 import { ArrowUpDown, CheckCircle2, Clock, Plus, DollarSign, Layers } from 'lucide-react';
 import { exportToCsv, exportToJson } from '../utils/exportUtils';
 import { ExportDropdown } from './ExportDropdown';
+import { InfoTooltip } from './InfoTooltip';
 
 export const AuctionDesk: React.FC = () => {
   const [orders, setOrders] = useState<AuctionOrder[]>(MOCK_AUCTION_ORDERS);
@@ -215,7 +216,12 @@ export const AuctionDesk: React.FC = () => {
                 <th className="py-3 px-4 text-right">Unit Price</th>
                 <th className="py-3 px-4 text-right">Volume</th>
                 <th className="py-3 px-4 text-right">Total (USD)</th>
-                <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4">
+                  <div className="flex items-center">
+                    <span>Status</span>
+                    <InfoTooltip text="Delivery versus Payment (DvP): a securities settlement principle. All DvP states in this prototype are entirely simulated." />
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60">
@@ -244,7 +250,7 @@ export const AuctionDesk: React.FC = () => {
                     <td className="py-3 px-4">
                       <span
                         className={`text-[11px] ${
-                          ord.status === 'Settled DvP'
+                          ord.status === 'Simulated DvP'
                             ? 'text-emerald-400'
                             : ord.status === 'Matched'
                             ? 'text-blue-400'

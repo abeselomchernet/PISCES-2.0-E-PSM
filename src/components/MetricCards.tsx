@@ -1,5 +1,6 @@
 import React from 'react';
 import { ISSUERS_DATA } from '../data/mockData';
+import { InfoTooltip } from './InfoTooltip';
 
 export const MetricCards: React.FC = () => {
   const totalRaiseUSD = ISSUERS_DATA.reduce((acc, curr) => acc + curr.targetRaiseUSD, 0);
@@ -29,7 +30,10 @@ export const MetricCards: React.FC = () => {
       </div>
 
       <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between">
-        <div className="text-xs text-slate-400 font-medium">Composite IMM Benchmark</div>
+        <div className="text-xs text-slate-400 font-medium flex items-center">
+          <span>Composite IMM Benchmark</span>
+          <InfoTooltip text="Intermittent Market Mechanism (IMM) Score: an analytical multi-factor model score combining 5 operational and financial resilience dimensions." />
+        </div>
         <div className="mt-2 text-2xl font-semibold tracking-tight text-emerald-400 font-mono tabular-nums">
           {avgImmScore} <span className="text-xs text-slate-400 font-normal">/ 100</span>
         </div>
@@ -39,7 +43,10 @@ export const MetricCards: React.FC = () => {
       </div>
 
       <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between">
-        <div className="text-xs text-slate-400 font-medium">Hard-Currency FX Cushion</div>
+        <div className="text-xs text-slate-400 font-medium flex items-center">
+          <span>Hard-Currency FX Cushion</span>
+          <InfoTooltip text="Foreign Exchange (FX) Resilience: share of issuer earnings in convertible hard currency to buffer ETB currency risk." />
+        </div>
         <div className="mt-2 text-2xl font-semibold tracking-tight text-white font-mono tabular-nums">
           {avgExportPct}%
         </div>
@@ -49,7 +56,10 @@ export const MetricCards: React.FC = () => {
       </div>
 
       <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between">
-        <div className="text-xs text-slate-400 font-medium">Illustrative First-Loss Cushion</div>
+        <div className="text-xs text-slate-400 font-medium flex items-center">
+          <span>Illustrative First-Loss Cushion</span>
+          <InfoTooltip text="First-Loss Cushion: an illustrative junior risk layer designed to absorb losses before senior tranches." />
+        </div>
         <div className="mt-2 text-2xl font-semibold tracking-tight text-emerald-400 font-mono tabular-nums">
           ${(totalFirstLossUSD / 1000000).toFixed(2)}M
         </div>
