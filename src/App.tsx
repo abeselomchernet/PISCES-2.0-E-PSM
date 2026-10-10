@@ -55,7 +55,7 @@ export default function App() {
         {activeTab === 'ecma' && <EcmaRegulatoryConsole />}
       </main>
 
-      {/* Prospectus & Underwriting Detail Modal */}
+      {/* Prospectus & Asset Detail Modal */}
       <IssuerDetailModal
         issuer={selectedIssuer}
         onClose={() => setSelectedIssuer(null)}
@@ -66,12 +66,12 @@ export default function App() {
       <footer className="border-t border-slate-900 bg-slate-950 py-6 text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
           <div className="flex items-center gap-2">
-            <span>BERHANE OS // PISCES 2.0</span>
+            <span>PISCES 2.0 // E-PSM PROTOTYPE</span>
             <span>·</span>
-            <span>PROCLAMATION 1248/2021 COMPLIANT</span>
+            <span>REFERENCE CONTEXT: PROCLAMATION 1248/2021</span>
           </div>
           <div>
-            Ethiopian Capital Market Authority (ECMA) Observer Terminal
+            Regulatory Observer UX Prototype · Synthetic / Demo Data Only
           </div>
         </div>
       </footer>

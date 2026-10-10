@@ -75,14 +75,14 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
       <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
           <div className="text-xs font-mono text-emerald-400 tracking-wider">
-            ARDI ENGINE // PREDICTIVE CAPITAL ALLOCATION
+            ARDI ANALYTICAL ENGINE // SCENARIO ALLOCATION PROTOTYPE
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-white mt-1">
-            Predictive IMM Stress Testing & Underwriting
+            IMM Stress Scenario & Issuer Analysis
           </h2>
           <p className="text-sm text-slate-400 mt-1 max-w-2xl">
             Simulate macroeconomic shocks across currency devaluation, domestic inflation, and debt service 
-            coverage to observe real-time migration across ECMA institutional tranches.
+            coverage to observe modelled score migration across illustrative institutional tranches.
           </p>
         </div>
 
@@ -302,7 +302,7 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
           </div>
         </div>
 
-        {/* Right Column: Predictive Scoring Outcome */}
+        {/* Right Column: Scenario Scoring Outcome */}
         <div className="lg:col-span-7 space-y-6">
           {/* Hero Score Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -349,7 +349,7 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
           {/* Sub-Metric Decomposition */}
           <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-white">Predictive Sub-Dimension Trajectory</h3>
+              <h3 className="text-sm font-semibold text-white">Analytical Sub-Dimension Trajectory</h3>
               <span className="text-xs text-slate-400 font-mono">Weighted Model Architecture</span>
             </div>
 
@@ -389,7 +389,7 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
               {/* Governance */}
               <div className="space-y-1">
                 <div className="flex justify-between text-xs">
-                  <span className="text-slate-300">Governance & ECMA Compliance (20% Wgt)</span>
+                  <span className="text-slate-300">Governance & Disclosure Quality (20% Wgt)</span>
                   <span className="font-mono tabular-nums text-slate-300">
                     {simulation.stressedSubScores.governanceTransparency} / 100
                   </span>
@@ -436,24 +436,24 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
             </div>
           </div>
 
-          {/* Institutional Underwriting Memo */}
+          {/* Institutional Analytical Scenario Memo */}
           <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/40 text-xs space-y-2">
             <div className="flex items-center gap-2 font-semibold text-slate-200">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              Underwriting Diagnostic Memo
+              Analytical Scenario Memo
             </div>
             <p className="text-slate-400 leading-relaxed">
               {simulation.stressedScore >= 80 ? (
                 <>
-                  <strong className="text-emerald-300">Prime Anchor Eligible:</strong> {activeIssuer.name} maintains a robust buffer against ETB devaluation due to its {activeIssuer.financials.exportRevenueSharePct}% hard-currency export earnings. Senior tranche placement is recommended at {simulation.recommendedSpreadBps} bps spread over the sovereign baseline with a standard 10% First-Loss Guarantee backstop.
+                  <strong className="text-emerald-300">Prime Anchor Eligible:</strong> {activeIssuer.name} maintains a robust buffer against ETB devaluation due to its {activeIssuer.financials.exportRevenueSharePct}% hard-currency export earnings. Senior tranche placement is modelled at {simulation.recommendedSpreadBps} bps spread over the sovereign baseline with an illustrative 10% First-Loss Guarantee backstop.
                 </>
               ) : simulation.stressedScore >= 68 ? (
                 <>
-                  <strong className="text-amber-300">Mezzanine Conditional:</strong> Macro stress triggers subscore compression down to {simulation.stressedScore}. It is recommended that QIBs require an expanded 15% first-loss sovereign tranche or hard-currency indexed coupon step-up if ETB depreciates beyond {stressParams.fxDevaluationShockPct}%.
+                  <strong className="text-amber-300">Mezzanine Conditional:</strong> Macro stress triggers subscore compression down to {simulation.stressedScore}. It is modelled that QIBs require an expanded 15% first-loss illustrative tranche or hard-currency indexed coupon step-up if ETB depreciates beyond {stressParams.fxDevaluationShockPct}%.
                 </>
               ) : (
                 <>
-                  <strong className="text-rose-300">Special Structuring Required:</strong> Severe macro stress pushes the issuer into high-yield tier with an implied default probability of {simulation.impliedDefaultProbabilityPct}%. Direct senior placement must be paired with structured warehouse liquidity or multilateral guarantee.
+                  <strong className="text-rose-300">Special Structuring Required:</strong> Severe macro stress pushes the issuer into high-yield tier with an implied default probability of {simulation.impliedDefaultProbabilityPct}%. Direct senior placement must be paired with structured warehouse liquidity or risk-sharing enhancement.
                 </>
               )}
             </p>

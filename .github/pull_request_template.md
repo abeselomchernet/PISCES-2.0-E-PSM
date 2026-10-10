@@ -1,5 +1,5 @@
 ## Description
-Briefly describe the purpose of this change and which module it affects (e.g., IMM Scoring Engine, Intermittent Auction Desk, Tranche Capital Allocation, ECMA Compliance).
+Briefly describe the purpose of this change and which module it affects (e.g., IMM Scoring Engine, Intermittent Auction Desk, Tranche Capital Allocation, Regulatory Observer).
 
 ## Type of Change
 - [ ] Bug fix (non-breaking change fixing an issue)

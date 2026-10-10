@@ -1,8 +1,8 @@
-# Contributing to Berhane OS (PISCES 2.0)
+# Contributing to PISCES 2.0 — E-PSM Institutional Market Prototype
 
-Thank you for your interest in contributing to **Berhane OS: Predictive IMM Scoring & Capital Terminal**!
+Thank you for your interest in contributing to **PISCES 2.0 — E-PSM Institutional Market Prototype**!
 
-This project provides institutional-grade analytics for unlisted securities and sovereign capital allocation under the Ethiopian Capital Market Authority (ECMA) regulatory framework.
+This project is a public prototype exploring intermittent private-securities market design, issuer analytics, stress scoring, auction workflows, structured-capital allocation, and regulatory-observer UX using synthetic/demo data.
 
 ---
 

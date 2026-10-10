@@ -1,4 +1,4 @@
-export type EcmaStatus = 'ECMA-Certified' | 'Provisional Review' | 'Tier-1 Qualified' | 'Audited Placed';
+export type EcmaStatus = 'Eligibility Cleared' | 'Provisional Review' | 'Tier-1 Qualified' | 'Audited Placed';
 
 export type Sector = 
   | 'Agro-Industrial'

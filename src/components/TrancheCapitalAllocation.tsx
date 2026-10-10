@@ -13,7 +13,7 @@ export const TrancheCapitalAllocation: React.FC = () => {
 
   const seniorCoupon = issuer.tranches.seniorCouponRate;
   const mezzanineCoupon = issuer.tranches.mezzanineCouponRate;
-  const firstLossFee = 2.5; // sovereign guarantee fee
+  const firstLossFee = 2.5; // illustrative first-loss guarantee fee
   const sovereignEquityCost = 18.0;
 
   // Blended WACC calculation
@@ -43,14 +43,14 @@ export const TrancheCapitalAllocation: React.FC = () => {
       <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
           <div className="text-xs font-mono text-emerald-400">
-            CAPITAL ARCHITECTURE // SOVEREIGN CROWD-IN
+            CAPITAL ARCHITECTURE // ILLUSTRATIVE TRANCHE MODELLING
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-white mt-1">
-            Tranche Structuring & Blended Yield Optimizer
+            Tranche Structuring & Blended Yield Modelling
           </h2>
           <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            Model sovereign first-loss guarantees to de-risk private credit tranches for qualified 
-            institutional buyers (QIBs), lowering the blended borrowing rate for productive Ethiopian enterprises.
+            Explore conceptual first-loss credit enhancements and their illustrative impact on blended financing costs 
+            for productive enterprise credit structures.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export const TrancheCapitalAllocation: React.FC = () => {
             {privateCapitalMultiplier}x
           </div>
           <div className="mt-1 text-xs text-slate-400">
-            Private $ Unlocked per $1 Sovereign Guarantee
+            Modelled Private Capital Ratio per $1 First-Loss
           </div>
         </div>
 
@@ -103,12 +103,12 @@ export const TrancheCapitalAllocation: React.FC = () => {
         </div>
 
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60">
-          <div className="text-xs text-slate-400">Senior Tranche Rating Equiv</div>
+          <div className="text-xs text-slate-400">Senior Tranche Profile (Modelled)</div>
           <div className="mt-2 text-3xl font-bold font-mono tabular-nums text-emerald-400">
-            A- (Local QIB)
+            Indicative Senior Profile
           </div>
           <div className="mt-1 text-xs text-slate-400">
-            Eligible for Pension & Insurance Reserves
+            Modelled Benchmark for Institutional Discussion
           </div>
         </div>
       </div>
@@ -204,13 +204,13 @@ export const TrancheCapitalAllocation: React.FC = () => {
             />
             <div className="flex justify-between text-[11px] text-slate-400">
               <span>Fee: {firstLossFee}%</span>
-              <span>Sovereign (EIH) / Multilateral Backstop</span>
+              <span>Illustrative Sovereign (EIH) / DFI First-Loss Concept</span>
             </div>
           </div>
 
           {/* Residual Sovereign Anchor Equity */}
           <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center text-xs">
-            <span className="text-slate-400">Residual Sovereign Sponsor Equity:</span>
+            <span className="text-slate-400">Residual Sponsor / Anchor Equity:</span>
             <span className="font-mono font-bold text-slate-200">
               {sovereignAnchorShare}% (${(sovereignEquityAmount / 1000000).toFixed(2)}M)
             </span>
@@ -259,7 +259,7 @@ export const TrancheCapitalAllocation: React.FC = () => {
               <div
                 style={{ width: `${sovereignAnchorShare}%` }}
                 className="bg-rose-400 flex items-center justify-center transition-all px-2 truncate"
-                title={`Sovereign Equity: ${sovereignAnchorShare}%`}
+                title={`Sponsor Equity: ${sovereignAnchorShare}%`}
               >
                 Eq {sovereignAnchorShare}%
               </div>
@@ -303,13 +303,13 @@ export const TrancheCapitalAllocation: React.FC = () => {
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 space-y-2">
               <div className="font-semibold text-amber-400 flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
-                First-Loss Sovereign Backstop
+                Illustrative First-Loss Backstop
               </div>
               <div className="text-slate-300">
                 Principal: ${(firstLossAmount / 1000000).toFixed(2)}M USD
               </div>
               <div className="text-slate-400">
-                Facility: Standby credit line from Ethiopian Investment Holdings
+                Concept: Illustrative credit enhancement mechanism (simulated)
               </div>
               <div className="text-slate-400">
                 Condition: Absorbs initial {firstLossShare}% losses prior to Senior impairment

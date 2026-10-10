@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help improve Berhane OS
+about: Create a report to help improve PISCES 2.0
 title: '[BUG]: '
 labels: bug
 assignees: ''

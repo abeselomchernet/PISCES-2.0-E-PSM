@@ -71,7 +71,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
       'EBITDA Margin (%)',
       'Working Capital Runway (Months)',
       'Total Debt (USD)',
-      'ECMA Regulatory Status',
+      'Eligibility Status (Modelled)',
       'Audit Partner',
       'Next Auction Date',
     ];
@@ -108,8 +108,8 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
     const dateStr = new Date().toISOString().slice(0, 10);
     const filterSuffix = selectedSector !== 'all' ? `_${selectedSector.replace(/\s+/g, '_')}` : '';
     exportToJson(`PISCES_Issuers_Pipeline${filterSuffix}_${dateStr}.json`, {
-      exchange: 'PISCES 2.0 (E-PSM)',
-      proclamationCompliance: 'Proclamation 1248/2021',
+      exchange: 'PISCES 2.0 (E-PSM Institutional Prototype)',
+      regulatoryContext: 'Designed with reference to Proclamation 1248/2021',
       exportedAt: new Date().toISOString(),
       currentFilters: {
         sector: selectedSector,
@@ -137,10 +137,10 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
       <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-white">
-            ECMA Qualified Issuer Pipeline
+            Institutional Issuer Pipeline (Demo Data)
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Registered private securities eligible for intermittent auction trading on PISCES 2.0
+            Synthetic issuer dossiers illustrating private debt & structured asset profiles in intermittent auction design
           </p>
         </div>
 
@@ -227,7 +227,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
                   </div>
                 </th>
                 <th className="py-3 px-4">DSCR Coverage</th>
-                <th className="py-3 px-4">ECMA Compliance</th>
+                <th className="py-3 px-4">Eligibility / Audit Status</th>
                 <th className="py-3 px-4">Next Auction</th>
                 <th className="py-3 px-4 text-right">Actions</th>
               </tr>

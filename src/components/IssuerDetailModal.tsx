@@ -24,7 +24,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
     downloadAnchor.setAttribute('href', dataStr);
     downloadAnchor.setAttribute(
       'download',
-      `${issuer.ticker}_ECMA_PROSPECTUS_PISCES.json`
+      `${issuer.ticker}_PROSPECTUS_PROTOTYPE_PISCES.json`
     );
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
@@ -48,7 +48,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
               {issuer.name}
             </h2>
             <div className="text-xs text-slate-400 mt-1">
-              ECMA Status: <span className="text-slate-200 font-medium">{issuer.ecmaStatus}</span> · Audited by <span className="text-slate-200">{issuer.auditPartner}</span>
+              Eligibility Status (Modelled): <span className="text-slate-200 font-medium">{issuer.ecmaStatus}</span> · Audited by <span className="text-slate-200">{issuer.auditPartner}</span>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
 
           {/* Subscore Decomposition */}
           <div className="p-4 rounded-xl border border-slate-800 bg-slate-950/40 space-y-3">
-            <h3 className="font-semibold text-white text-sm">Underwriting Sub-Score Evaluation</h3>
+            <h3 className="font-semibold text-white text-sm">Analytical Sub-Score Evaluation</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <div className="flex justify-between text-slate-300">
@@ -182,7 +182,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
           <div className="p-4 rounded-xl border border-slate-800 bg-slate-950/40 space-y-3 font-mono">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold text-white font-sans text-sm">
-                IMM Score Quarterly Trajectory & Forecast
+                IMM Score Trajectory & Illustrative Projection
               </h3>
               <span className="text-slate-400 text-[11px]">6 Quarters Real + 4 Quarters Projected</span>
             </div>
@@ -207,7 +207,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
 
           {/* Quantitative Impact Additionality */}
           <div className="p-4 rounded-xl border border-slate-800 bg-slate-950/40 space-y-3">
-            <h3 className="font-semibold text-white text-sm">Demonstrated Additionality & ESG Metrics</h3>
+            <h3 className="font-semibold text-white text-sm">Additionality & ESG Metrics (Demo Data)</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
               <div className="p-3 bg-slate-900 rounded-lg">
                 <div className="text-[11px] text-slate-400">Direct Jobs</div>

@@ -11,18 +11,18 @@ export const EcmaRegulatoryConsole: React.FC = () => {
   const handleTriggerRoutineAudit = () => {
     const randomIssuer = ISSUERS_DATA[Math.floor(Math.random() * ISSUERS_DATA.length)];
     const newAudit: EcmaAuditLog = {
-      id: `ecma-${Math.floor(9200 + Math.random() * 800)}`,
-      directiveCode: 'DIR-2025/IMM-SURVEILLANCE-LIVE',
-      subject: 'Automated Intermittent Call Invariant Verification',
+      id: `obs-${Math.floor(9200 + Math.random() * 800)}`,
+      directiveCode: 'REF-DIR-2025/IMM-SURVEILLANCE-SIM',
+      subject: 'Automated Intermittent Call Invariant Verification (Prototype)',
       entityName: randomIssuer.name,
-      auditScope: `Real-time FX retention vault verification & ${randomIssuer.financials.exportRevenueSharePct}% hard-currency collateral audit`,
+      auditScope: `Simulated FX retention verification & ${randomIssuer.financials.exportRevenueSharePct}% hard-currency collateral audit`,
       timestamp: new Date().toISOString().replace('T', ' ').substring(0, 19) + ' EAT',
       complianceRating: 'COMPLIANT',
-      auditorId: `ECMA-OFFICER-${Math.floor(10 + Math.random() * 80)}`,
+      auditorId: `OBSERVER-SIM-${Math.floor(10 + Math.random() * 80)}`,
     };
 
     setAudits([newAudit, ...audits]);
-    setAuditNotification(`ECMA Supervisory Audit successfully executed for ${randomIssuer.name}: All regulatory invariants confirmed compliant.`);
+    setAuditNotification(`Simulated regulatory surveillance check logged for ${randomIssuer.name}: Prototype invariant checks completed.`);
     setTimeout(() => setAuditNotification(null), 5000);
   };
 
@@ -36,14 +36,14 @@ export const EcmaRegulatoryConsole: React.FC = () => {
       <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
           <div className="text-xs font-mono text-emerald-400">
-            ECMA REGULATORY MOAT // PROCLAMATION 1248/2021
+            REGULATORY OBSERVER // REFERENCE CONTEXT: PROCLAMATION 1248/2021
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-white mt-1">
-            ECMA Observer & Compliance Console
+            Regulatory Observer — Prototype UX
           </h2>
           <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            Supervisory interface monitoring adherence to Ethiopian Capital Market Authority private 
-            placement directives, institutional accreditation thresholds, and dual-currency reserve vaults.
+            Prototype interface illustrating regulatory-observer oversight, compliance controls, and disclosure 
+            surveillance workflows designed with reference to Ethiopian Capital Market Authority private placement concepts.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export const EcmaRegulatoryConsole: React.FC = () => {
           className="px-4 py-2.5 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-sm whitespace-nowrap"
         >
           <Play className="w-4 h-4 fill-current" />
-          Run ECMA Compliance Audit
+          Simulate Supervisory Audit Check
         </button>
       </div>
 
@@ -63,44 +63,44 @@ export const EcmaRegulatoryConsole: React.FC = () => {
         </div>
       )}
 
-      {/* Statutory Regulatory Invariants */}
+      {/* Regulatory Context & Prototype Controls */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono text-slate-400">RULE 144A EQUIVALENT</span>
+            <span className="text-xs font-mono text-slate-400">QUALIFIED INVESTOR THRESHOLDS</span>
             <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5" /> Enforced
+              <CheckCircle2 className="w-3.5 h-3.5" /> Modelled
             </span>
           </div>
-          <div className="font-semibold text-sm text-white">QIB Exclusivity Moat</div>
+          <div className="font-semibold text-sm text-white">Institutional Eligibility Gate (Modelled)</div>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Secondary trading restricted exclusively to licensed institutional buyers with net investable assets exceeding $2,000,000 USD equivalent.
+            Simulated qualification policy: trading modelled for licensed institutional buyers with net investable assets exceeding $2,000,000 USD equivalent.
           </p>
         </div>
 
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono text-slate-400">NBE DIRECTIVE FX-02</span>
+            <span className="text-xs font-mono text-slate-400">DUAL-CURRENCY SETTLEMENT</span>
             <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5" /> 100% Cleared
+              <CheckCircle2 className="w-3.5 h-3.5" /> Proposed
             </span>
           </div>
-          <div className="font-semibold text-sm text-white">Dual-Currency Custody Vault</div>
+          <div className="font-semibold text-sm text-white">Dual-Currency Custody Concept</div>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Offshore USD settlement accounts paired with National Bank Birr clearing vaults, ensuring Delivery-versus-Payment without FX friction.
+            Target architecture concept: paired offshore USD and local Birr accounts explored for Delivery-versus-Payment without FX friction.
           </p>
         </div>
 
         <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono text-slate-400">PROSPECTUS INVARIANT</span>
+            <span className="text-xs font-mono text-slate-400">DISCLOSURE INVARIANT</span>
             <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5" /> Active
+              <CheckCircle2 className="w-3.5 h-3.5" /> Prototype
             </span>
           </div>
-          <div className="font-semibold text-sm text-white">Predictive IMM Invariant Guard</div>
+          <div className="font-semibold text-sm text-white">IMM Scoring Threshold Guard (Prototype)</div>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Automated suspension of intermittent auction eligibility if an issuer’s predictive IMM score drops below 60 without structured anchor injection.
+            Modelled control: suspension of intermittent auction eligibility if an issuer’s analytical IMM score drops below 60 without structured credit enhancement.
           </p>
         </div>
       </div>
@@ -109,7 +109,7 @@ export const EcmaRegulatoryConsole: React.FC = () => {
       <div className="rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
         <div className="p-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-semibold text-white">Regulatory Audit Trail</h3>
+            <h3 className="text-sm font-semibold text-white">Simulated Regulatory Surveillance Log</h3>
             <span className="text-xs text-slate-400 font-mono">({filteredAudits.length} entries)</span>
           </div>
 
@@ -133,10 +133,10 @@ export const EcmaRegulatoryConsole: React.FC = () => {
               <tr className="border-b border-slate-800 text-slate-400 bg-slate-950/40">
                 <th className="py-3 px-4">Audit ID</th>
                 <th className="py-3 px-4">Directive Code</th>
-                <th className="py-3 px-4">Supervised Entity</th>
+                <th className="py-3 px-4">Observed Entity</th>
                 <th className="py-3 px-4">Subject & Scope</th>
                 <th className="py-3 px-4">Timestamp</th>
-                <th className="py-3 px-4">Auditor ID</th>
+                <th className="py-3 px-4">Observer ID</th>
                 <th className="py-3 px-4">Verdict</th>
               </tr>
             </thead>

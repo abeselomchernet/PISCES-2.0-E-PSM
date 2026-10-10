@@ -33,19 +33,19 @@ export const AuctionDesk: React.FC = () => {
 
     setOrders([newOrder, ...orders]);
     setShowOrderModal(false);
-    setClearingMessage(`Institutional ${orderType} order for ${volume.toLocaleString()} units of ${selectedSecurity} staged for next intermittent clearing call.`);
+    setClearingMessage(`Institutional ${orderType} order for ${volume.toLocaleString()} units of ${selectedSecurity} staged in local prototype for next intermittent clearing window.`);
     setTimeout(() => setClearingMessage(null), 5000);
   };
 
   const handleExecuteIntermittentClearing = () => {
-    // Matches pending bids and asks around median clearing price
+    // Demonstration: sets status to Matched with illustrative clearing price notice
     const updated = orders.map((ord) => ({
       ...ord,
       status: 'Matched' as const,
     }));
     setOrders(updated);
-    setClearingMessage('PISCES Intermittent Call Executed: Clearing price discovered at $100.35/unit. All overlapping tranches matched.');
-    setTimeout(() => setClearingMessage(null), 6000);
+    setClearingMessage('Simulated Call Executed: Demonstration clearing price set at $100.35/unit. (Note: Simplified matching demo; full algorithmic clearing-price engine is target architecture).');
+    setTimeout(() => setClearingMessage(null), 7000);
   };
 
   const totalBidVolume = orders
@@ -90,8 +90,8 @@ export const AuctionDesk: React.FC = () => {
   const handleExportOrdersJson = () => {
     const dateStr = new Date().toISOString().slice(0, 10);
     exportToJson(`PISCES_Auction_OrderBook_${dateStr}.json`, {
-      exchange: 'PISCES 2.0 (E-PSM)',
-      system: 'Ardi Intermittent Clearing Engine',
+      exchange: 'PISCES 2.0 (E-PSM Prototype)',
+      system: 'Intermittent Order Staging Workflow (Simulation)',
       exportedAt: new Date().toISOString(),
       metrics: {
         totalBookValueUSD: totalVolumeUSD,
@@ -109,14 +109,14 @@ export const AuctionDesk: React.FC = () => {
       <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
           <div className="text-xs font-mono text-emerald-400">
-            PISCES 2.0 // INTERMITTENT AUCTION CLEARING
+            PISCES 2.0 // INTERMITTENT AUCTION WORKFLOW (SIMULATION)
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-white mt-1">
-            Secondary Liquidity & Auction Desk
+            Intermittent Auction Desk (Simulated Workflow)
           </h2>
           <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            PISCES operates discrete, scheduled call auctions rather than continuous trading, concentrating 
-            institutional liquidity and eliminating predatory high-frequency spreads for unlisted sovereign securities.
+            Explores discrete, scheduled call auction workflows rather than continuous trading, concentrating 
+            institutional liquidity and exploring non-continuous market structure for unlisted private securities.
           </p>
         </div>
 
@@ -132,13 +132,13 @@ export const AuctionDesk: React.FC = () => {
             className="px-4 py-2.5 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
           >
             <Plus className="w-4 h-4" />
-            Place Institutional Order
+            Stage Institutional Order
           </button>
           <button
             onClick={handleExecuteIntermittentClearing}
             className="px-4 py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
           >
-            Trigger Auction Call
+            Simulate Auction Call
           </button>
         </div>
       </div>
@@ -157,7 +157,7 @@ export const AuctionDesk: React.FC = () => {
           <div className="mt-1 text-xl font-bold font-mono tabular-nums text-white">
             ${(totalVolumeUSD / 1000000).toFixed(2)}M
           </div>
-          <div className="text-[11px] text-slate-400 mt-0.5">Across 5 Institutional Tranches</div>
+          <div className="text-[11px] text-slate-400 mt-0.5">Across {orders.length} Logged Orders</div>
         </div>
 
         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
@@ -165,23 +165,23 @@ export const AuctionDesk: React.FC = () => {
           <div className="mt-1 text-xl font-bold font-mono tabular-nums text-emerald-400">
             {(totalBidVolume / Math.max(1, totalAskVolume)).toFixed(2)}x
           </div>
-          <div className="text-[11px] text-slate-400 mt-0.5">Net Buy Pressure</div>
+          <div className="text-[11px] text-slate-400 mt-0.5">Modelled Order Imbalance</div>
         </div>
 
         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
-          <div className="text-xs text-slate-400">Intermittent Clearing Window</div>
+          <div className="text-xs text-slate-400">Clearing Schedule (Modelled)</div>
           <div className="mt-1 text-xl font-bold font-mono tabular-nums text-white">
             Bi-Weekly Call
           </div>
-          <div className="text-[11px] text-slate-400 mt-0.5">Next Window: Oct 24, 2026</div>
+          <div className="text-[11px] text-slate-400 mt-0.5">Illustrative Window: Oct 24, 2026</div>
         </div>
 
         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60">
-          <div className="text-xs text-slate-400">Settlement Standard</div>
+          <div className="text-xs text-slate-400">Settlement Model (Proposed)</div>
           <div className="mt-1 text-xl font-bold font-mono tabular-nums text-white">
-            T+2 DvP
+            T+2 DvP (Simulated)
           </div>
-          <div className="text-[11px] text-slate-400 mt-0.5">National Bank Cleared Depository</div>
+          <div className="text-[11px] text-slate-400 mt-0.5">Modelled Depository Workflow</div>
         </div>
       </div>
 
@@ -193,7 +193,7 @@ export const AuctionDesk: React.FC = () => {
             <span className="text-xs text-slate-400 font-mono">({orders.length} Orders Logged)</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-slate-400 font-mono hidden sm:inline">ECMA Blind-Auction Protected</span>
+            <span className="text-xs text-slate-400 font-mono hidden sm:inline">Simulated Order Book Privacy Gate</span>
             <ExportDropdown
               label="Export Table"
               count={orders.length}
@@ -268,7 +268,7 @@ export const AuctionDesk: React.FC = () => {
           <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 space-y-5">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="text-base font-semibold text-white">
-                Submit Institutional Auction Order
+                Stage Institutional Order (Simulation)
               </h3>
               <button
                 onClick={() => setShowOrderModal(false)}
@@ -382,7 +382,7 @@ export const AuctionDesk: React.FC = () => {
                   type="submit"
                   className="px-4 py-2 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg cursor-pointer"
                 >
-                  Confirm & Route Order
+                  Stage Order in Prototype
                 </button>
               </div>
             </form>

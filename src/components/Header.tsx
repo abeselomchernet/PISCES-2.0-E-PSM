@@ -11,54 +11,61 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenS
   return (
     <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Wordmark */}
+        {/* Zone 1: Brand Wordmark & Prototype Badge */}
         <div className="flex items-center gap-3 shrink-0">
           <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
             <ShieldCheck className="w-5 h-5" />
           </div>
-          <span className="text-lg font-semibold tracking-tight text-white whitespace-nowrap">
-            BERHANE OS
-          </span>
-          <span className="hidden sm:inline-block text-xs font-mono text-slate-400 border-l border-slate-800 pl-3">
-            PISCES 2.0 // IMM CAPITAL TERMINAL
-          </span>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <span className="text-base font-semibold tracking-tight text-white whitespace-nowrap">
+                PISCES 2.0
+              </span>
+              <span className="hidden sm:inline-block text-[11px] font-mono text-slate-400 border-l border-slate-800 pl-2">
+                E-PSM PROTOTYPE
+              </span>
+            </div>
+            <span className="text-[10px] font-mono tracking-wider text-emerald-400/90 uppercase">
+              PUBLIC PROTOTYPE · SYNTHETIC DATA
+            </span>
+          </div>
         </div>
 
         {/* Zone 2: Single-line Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-slate-300">
           <button
             onClick={() => setActiveTab('scoring')}
-            className={`whitespace-nowrap pb-1 border-b-2 transition-colors ${
+            className={`whitespace-nowrap pb-1 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'scoring'
                 ? 'border-emerald-400 text-white font-semibold'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            IMM Scoring Engine
+            IMM Scoring
           </button>
           <button
             onClick={() => setActiveTab('issuers')}
-            className={`whitespace-nowrap pb-1 border-b-2 transition-colors ${
+            className={`whitespace-nowrap pb-1 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'issuers'
                 ? 'border-emerald-400 text-white font-semibold'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            Issuer Pipeline
+            Issuer Directory
           </button>
           <button
             onClick={() => setActiveTab('auction')}
-            className={`whitespace-nowrap pb-1 border-b-2 transition-colors ${
+            className={`whitespace-nowrap pb-1 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'auction'
                 ? 'border-emerald-400 text-white font-semibold'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            Intermittent Auctions
+            Auction Desk
           </button>
           <button
             onClick={() => setActiveTab('tranches')}
-            className={`whitespace-nowrap pb-1 border-b-2 transition-colors ${
+            className={`whitespace-nowrap pb-1 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'tranches'
                 ? 'border-emerald-400 text-white font-semibold'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -68,13 +75,13 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenS
           </button>
           <button
             onClick={() => setActiveTab('ecma')}
-            className={`whitespace-nowrap pb-1 border-b-2 transition-colors ${
+            className={`whitespace-nowrap pb-1 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'ecma'
                 ? 'border-emerald-400 text-white font-semibold'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            ECMA Oversight
+            Regulatory Observer
           </button>
         </nav>
 
@@ -119,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenS
           onClick={() => setActiveTab('ecma')}
           className={`whitespace-nowrap shrink-0 py-1 ${activeTab === 'ecma' ? 'text-emerald-400 font-semibold' : ''}`}
         >
-          ECMA Rules
+          Observer
         </button>
       </div>
     </header>
