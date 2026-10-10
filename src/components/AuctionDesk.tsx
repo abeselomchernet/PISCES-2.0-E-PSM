@@ -10,7 +10,7 @@ export const AuctionDesk: React.FC = () => {
   const [selectedSecurity, setSelectedSecurity] = useState<string>('AWSH-AGRO-SR');
   const [orderType, setOrderType] = useState<'BID' | 'ASK'>('BID');
   const [investorType, setInvestorType] = useState<AuctionOrder['investorType']>('QIB Pension');
-  const [investorName, setInvestorName] = useState<string>('Development Bank of Ethiopia Syndicate');
+  const [investorName, setInvestorName] = useState<string>('Illustrative Domestic DFI Syndicate');
   const [unitPrice, setUnitPrice] = useState<number>(100.50);
   const [volume, setVolume] = useState<number>(20000);
   const [showOrderModal, setShowOrderModal] = useState<boolean>(false);
@@ -316,7 +316,7 @@ export const AuctionDesk: React.FC = () => {
                     className="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-lg p-2.5"
                   >
                     <option value="QIB Pension">QIB Pension Fund</option>
-                    <option value="Sovereign Wealth">Sovereign Wealth (EIH)</option>
+                    <option value="Sovereign Wealth">Illustrative Sovereign Investor</option>
                     <option value="Regional DFI">Regional DFI</option>
                     <option value="Private Equity Syndication">Private Equity Syndication</option>
                   </select>

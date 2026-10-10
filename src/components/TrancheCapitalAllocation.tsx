@@ -204,7 +204,7 @@ export const TrancheCapitalAllocation: React.FC = () => {
             />
             <div className="flex justify-between text-[11px] text-slate-400">
               <span>Fee: {firstLossFee}%</span>
-              <span>Illustrative Sovereign (EIH) / DFI First-Loss Concept</span>
+              <span>Illustrative Sovereign / DFI First-Loss Concept</span>
             </div>
           </div>
 

@@ -48,7 +48,7 @@ export const IssuerDetailModal: React.FC<IssuerDetailModalProps> = ({
               {issuer.name}
             </h2>
             <div className="text-xs text-slate-400 mt-1">
-              Eligibility Status (Modelled): <span className="text-slate-200 font-medium">{issuer.ecmaStatus}</span> · Audited by <span className="text-slate-200">{issuer.auditPartner}</span>
+              Eligibility Status (Modelled): <span className="text-slate-200 font-medium">{issuer.eligibilityStatus}</span> · Audited by <span className="text-slate-200">{issuer.auditPartner}</span>
             </div>
           </div>
 

@@ -5,7 +5,7 @@ import { ImmScoringConsole } from './components/ImmScoringConsole';
 import { IssuerDirectory } from './components/IssuerDirectory';
 import { AuctionDesk } from './components/AuctionDesk';
 import { TrancheCapitalAllocation } from './components/TrancheCapitalAllocation';
-import { EcmaRegulatoryConsole } from './components/EcmaRegulatoryConsole';
+import { RegulatoryObserverConsole } from './components/RegulatoryObserverConsole';
 import { IssuerDetailModal } from './components/IssuerDetailModal';
 import { Issuer } from './types';
 import { ISSUERS_DATA } from './data/mockData';
@@ -52,7 +52,7 @@ export default function App() {
 
         {activeTab === 'tranches' && <TrancheCapitalAllocation />}
 
-        {activeTab === 'ecma' && <EcmaRegulatoryConsole />}
+        {activeTab === 'ecma' && <RegulatoryObserverConsole />}
       </main>
 
       {/* Prospectus & Asset Detail Modal */}

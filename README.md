@@ -84,7 +84,7 @@ src/App.tsx (Master Layout & State)
 │   ├── IssuerDirectory.tsx (Pipeline Directory, Filters & Search)
 │   ├── AuctionDesk.tsx (Order Staging & Simulated Clearing Workflow)
 │   ├── TrancheCapitalAllocation.tsx (Interactive Capital Waterfall & Blended Yield)
-│   └── EcmaRegulatoryConsole.tsx (Regulatory Observer UX & Simulated Surveillance Log)
+│   └── RegulatoryObserverConsole.tsx (Regulatory Observer UX & Simulated Surveillance Log)
 ├── IssuerDetailModal.tsx (Detailed Term Sheet Dossier & Prospectus Download)
 └── Footer (Regulatory Context Reference & Prototype Notice)
 ```
@@ -116,7 +116,7 @@ To maintain strict evidentiary integrity, all users and reviewers should note:
 
 ## Technology Stack
 
-- **Runtime & Bundler**: Vite 8, Node.js, TypeScript 5.8 (ES2022)
+- **Runtime & Bundler**: Vite 8, Node.js, TypeScript ^7.0.2 (ES2022)
 - **UI Framework**: React 19, Tailwind CSS v4
 - **Icons & Motion**: Lucide React, Motion
 - **Data Export**: Native client-side CSV / JSON generators (RFC 4180 compliant)

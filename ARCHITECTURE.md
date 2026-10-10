@@ -140,7 +140,7 @@ $$M_{\text{crowd-in}} = \frac{\phi_{\text{Senior}} + \phi_{\text{Mezzanine}}}{\m
 
 ## 7. Regulatory-Observer Design
 
-In `src/components/EcmaRegulatoryConsole.tsx`, the prototype models a regulatory observer terminal:
+In `src/components/RegulatoryObserverConsole.tsx`, the prototype models a regulatory observer terminal:
 - Displays simulated compliance audit logs linked to reference directives.
 - Features mock supervisory alerts for invariant breaches (e.g., minimum cash flow coverage or stress score degradation).
 - Allows triggering synthetic audit records to observe event log workflows.

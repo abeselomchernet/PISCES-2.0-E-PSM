@@ -1,4 +1,4 @@
-import { Issuer, ImmStressParameters, SubScores } from '../types';
+import { Issuer, ImmStressParameters, SubScores, ImmTier } from '../types';
 
 export const IMM_WEIGHTS = {
   cashFlowPredictability: 0.25,
@@ -23,12 +23,12 @@ export function calculateCompositeImmScore(sub: SubScores): number {
 }
 
 /**
- * Derives institutional investment tier from composite IMM score
+ * Derives prototype model tier from composite score (deterministic prototype thresholds)
  */
-export function getImmTier(score: number): 'Tier-A (Prime Institutional)' | 'Tier-B (High Yield Qualified)' | 'Tier-C (Structured Anchor Required)' {
-  if (score >= 82) return 'Tier-A (Prime Institutional)';
-  if (score >= 68) return 'Tier-B (High Yield Qualified)';
-  return 'Tier-C (Structured Anchor Required)';
+export function getImmTier(score: number): ImmTier {
+  if (score >= 82) return 'Model Tier A';
+  if (score >= 68) return 'Model Tier B';
+  return 'Model Tier C';
 }
 
 /**

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { MOCK_ECMA_AUDITS, ISSUERS_DATA } from '../data/mockData';
-import { EcmaAuditLog } from '../types';
+import { MOCK_REGULATORY_OBSERVER_LOGS, ISSUERS_DATA } from '../data/mockData';
+import { RegulatoryObserverLog } from '../types';
 import { ShieldCheck, CheckCircle2, AlertTriangle, FileText, Search, Play } from 'lucide-react';
 
-export const EcmaRegulatoryConsole: React.FC = () => {
-  const [audits, setAudits] = useState<EcmaAuditLog[]>(MOCK_ECMA_AUDITS);
+export const RegulatoryObserverConsole: React.FC = () => {
+  const [audits, setAudits] = useState<RegulatoryObserverLog[]>(MOCK_REGULATORY_OBSERVER_LOGS);
   const [filterRating, setFilterRating] = useState<string>('ALL');
   const [auditNotification, setAuditNotification] = useState<string | null>(null);
 
   const handleTriggerRoutineAudit = () => {
     const randomIssuer = ISSUERS_DATA[Math.floor(Math.random() * ISSUERS_DATA.length)];
-    const newAudit: EcmaAuditLog = {
+    const newAudit: RegulatoryObserverLog = {
       id: `obs-${Math.floor(9200 + Math.random() * 800)}`,
       directiveCode: 'REF-DIR-2025/IMM-SURVEILLANCE-SIM',
       subject: 'Automated Intermittent Call Invariant Verification (Prototype)',
@@ -171,3 +171,5 @@ export const EcmaRegulatoryConsole: React.FC = () => {
     </div>
   );
 };
+
+export const EcmaRegulatoryConsole = RegulatoryObserverConsole;

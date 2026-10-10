@@ -94,7 +94,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
       issuer.financials.ebitdaMarginPct,
       issuer.financials.workingCapitalRunwayMonths,
       issuer.financials.totalDebtUSD,
-      issuer.ecmaStatus,
+      issuer.eligibilityStatus,
       issuer.auditPartner,
       issuer.nextAuctionDate,
     ]);
@@ -295,7 +295,7 @@ export const IssuerDirectory: React.FC<IssuerDirectoryProps> = ({
 
                     <td className="py-3.5 px-4">
                       <div className="text-slate-200 font-medium text-xs">
-                        {issuer.ecmaStatus}
+                        {issuer.eligibilityStatus}
                       </div>
                       <div className="text-[10px] text-slate-400 truncate max-w-32">
                         {issuer.auditPartner}

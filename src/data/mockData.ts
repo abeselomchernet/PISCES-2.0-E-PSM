@@ -1,4 +1,4 @@
-import { Issuer, AuctionOrder, EcmaAuditLog } from '../types';
+import { Issuer, AuctionOrder, RegulatoryObserverLog, EcmaAuditLog } from '../types';
 
 export const ISSUERS_DATA: Issuer[] = [
   {
@@ -11,9 +11,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 24500000,
     targetRaiseETB: 3430000000,
     preMoneyValuationUSD: 118000000,
-    ecmaStatus: 'Eligibility Cleared',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 88.4,
-    immTier: 'Tier-A (Prime Institutional)',
+    immTier: 'Model Tier A',
     subScores: {
       cashFlowPredictability: 89.0,
       sovereignFxResilience: 92.5,
@@ -73,9 +74,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 45000000,
     targetRaiseETB: 6300000000,
     preMoneyValuationUSD: 195000000,
-    ecmaStatus: 'Eligibility Cleared',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 84.1,
-    immTier: 'Tier-A (Prime Institutional)',
+    immTier: 'Model Tier A',
     subScores: {
       cashFlowPredictability: 91.2,
       sovereignFxResilience: 79.0,
@@ -135,9 +137,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 32000000,
     targetRaiseETB: 4480000000,
     preMoneyValuationUSD: 140000000,
-    ecmaStatus: 'Tier-1 Qualified',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 79.6,
-    immTier: 'Tier-B (High Yield Qualified)',
+    immTier: 'Model Tier B',
     subScores: {
       cashFlowPredictability: 82.4,
       sovereignFxResilience: 81.0,
@@ -197,9 +200,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 18000000,
     targetRaiseETB: 2520000000,
     preMoneyValuationUSD: 92000000,
-    ecmaStatus: 'Eligibility Cleared',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 82.7,
-    immTier: 'Tier-A (Prime Institutional)',
+    immTier: 'Model Tier A',
     subScores: {
       cashFlowPredictability: 88.5,
       sovereignFxResilience: 73.0,
@@ -259,9 +263,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 28000000,
     targetRaiseETB: 3920000000,
     preMoneyValuationUSD: 105000000,
-    ecmaStatus: 'Tier-1 Qualified',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 76.8,
-    immTier: 'Tier-B (High Yield Qualified)',
+    immTier: 'Model Tier B',
     subScores: {
       cashFlowPredictability: 74.0,
       sovereignFxResilience: 84.5,
@@ -321,9 +326,10 @@ export const ISSUERS_DATA: Issuer[] = [
     targetRaiseUSD: 15500000,
     targetRaiseETB: 2170000000,
     preMoneyValuationUSD: 84000000,
-    ecmaStatus: 'Eligibility Cleared',
+    eligibilityStatus: 'Prototype Eligibility — Cleared',
+    ecmaStatus: 'Prototype Eligibility — Cleared',
     immScore: 91.2,
-    immTier: 'Tier-A (Prime Institutional)',
+    immTier: 'Model Tier A',
     subScores: {
       cashFlowPredictability: 92.0,
       sovereignFxResilience: 96.8,
@@ -378,7 +384,7 @@ export const ISSUERS_DATA: Issuer[] = [
 export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   {
     id: 'ord-801',
-    investorName: 'Public Sector Employees Pension Fund',
+    investorName: 'Illustrative Pension Fund A',
     investorType: 'QIB Pension',
     type: 'BID',
     securityTicker: 'BPAS-AGRI-01-SR',
@@ -390,7 +396,7 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   },
   {
     id: 'ord-802',
-    investorName: 'Eastern Africa Development Bank (EADB)',
+    investorName: 'Illustrative Regional DFI',
     investorType: 'Regional DFI',
     type: 'BID',
     securityTicker: 'WALTB-PWR-02-SR',
@@ -402,7 +408,7 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   },
   {
     id: 'ord-803',
-    investorName: 'Ethiopian Investment Holdings (EIH)',
+    investorName: 'Illustrative Sovereign Investor',
     investorType: 'Sovereign Wealth',
     type: 'BID',
     securityTicker: 'WALTB-EXP-06-SR',
@@ -414,7 +420,7 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   },
   {
     id: 'ord-804',
-    investorName: 'African Pioneer Mezzanine Syndicate',
+    investorName: 'Illustrative Mezzanine Syndicate',
     investorType: 'Private Equity Syndication',
     type: 'BID',
     securityTicker: 'SGFC-LOG-03-MZ',
@@ -426,7 +432,7 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   },
   {
     id: 'ord-805',
-    investorName: 'Central Liquidity Secondary Desk',
+    investorName: 'Illustrative Secondary Trading Desk',
     investorType: 'QIB Pension',
     type: 'ASK',
     securityTicker: 'BPAS-AGRI-01-SR',
@@ -438,12 +444,12 @@ export const MOCK_AUCTION_ORDERS: AuctionOrder[] = [
   },
 ];
 
-export const MOCK_ECMA_AUDITS: EcmaAuditLog[] = [
+export const MOCK_REGULATORY_OBSERVER_LOGS: RegulatoryObserverLog[] = [
   {
     id: 'obs-9102',
     directiveCode: 'REF-DIR-2025/144A',
     subject: 'Simulated Qualified Investor Eligibility Verification',
-    entityName: 'Ethiopian Reinsurance S.C. (Synthetic)',
+    entityName: 'Illustrative Reinsurance Syndicate (Synthetic)',
     auditScope: 'Modelled capital adequacy & dual-currency settlement account eligibility check',
     timestamp: '2026-10-08 16:40 EAT',
     complianceRating: 'COMPLIANT',
@@ -480,3 +486,5 @@ export const MOCK_ECMA_AUDITS: EcmaAuditLog[] = [
     auditorId: 'OBSERVER-SIM-027',
   },
 ];
+
+export const MOCK_ECMA_AUDITS: EcmaAuditLog[] = MOCK_REGULATORY_OBSERVER_LOGS;

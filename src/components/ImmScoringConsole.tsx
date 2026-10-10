@@ -445,7 +445,7 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
             <p className="text-slate-400 leading-relaxed">
               {simulation.stressedScore >= 80 ? (
                 <>
-                  <strong className="text-emerald-300">Prime Anchor Eligible:</strong> {activeIssuer.name} maintains a robust buffer against ETB devaluation due to its {activeIssuer.financials.exportRevenueSharePct}% hard-currency export earnings. Senior tranche placement is modelled at {simulation.recommendedSpreadBps} bps spread over the sovereign baseline with an illustrative 10% First-Loss Guarantee backstop.
+                  <strong className="text-emerald-300">Model Tier A Anchor Eligible:</strong> {activeIssuer.name} maintains a robust buffer against ETB devaluation due to its {activeIssuer.financials.exportRevenueSharePct}% hard-currency export earnings. Senior tranche placement is modelled at {simulation.recommendedSpreadBps} bps spread over the sovereign baseline with an illustrative 10% First-Loss Guarantee backstop.
                 </>
               ) : simulation.stressedScore >= 68 ? (
                 <>
@@ -453,7 +453,7 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
                 </>
               ) : (
                 <>
-                  <strong className="text-rose-300">Special Structuring Required:</strong> Severe macro stress pushes the issuer into high-yield tier with an implied default probability of {simulation.impliedDefaultProbabilityPct}%. Direct senior placement must be paired with structured warehouse liquidity or risk-sharing enhancement.
+                  <strong className="text-rose-300">Special Structuring Required:</strong> Severe macro stress pushes the issuer into Model Tier C with an implied default probability of {simulation.impliedDefaultProbabilityPct}%. Direct senior placement must be paired with structured warehouse liquidity or risk-sharing enhancement.
                 </>
               )}
             </p>
@@ -471,9 +471,9 @@ export const ImmScoringConsole: React.FC<ImmScoringConsoleProps> = ({ onSelectIs
             </p>
           </div>
           <div className="flex items-center gap-3 text-xs text-slate-400 font-mono">
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-500/80 inline-block"></span> $\ge 82$ Prime</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-500/80 inline-block"></span> $68-81$ Yield</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-500/80 inline-block"></span> $&lt; 68$ Stressed</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-500/80 inline-block"></span> $\ge 82$ Tier A</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-500/80 inline-block"></span> $68-81$ Tier B</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-500/80 inline-block"></span> $&lt; 68$ Tier C</span>
           </div>
         </div>
 

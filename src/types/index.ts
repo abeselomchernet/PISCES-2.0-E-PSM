@@ -1,4 +1,7 @@
-export type EcmaStatus = 'Eligibility Cleared' | 'Provisional Review' | 'Tier-1 Qualified' | 'Audited Placed';
+export type EligibilityStatus = 'Prototype Eligibility — Cleared' | 'Provisional Review' | 'Audited Placed';
+export type EcmaStatus = EligibilityStatus; // Backwards-compatibility alias
+
+export type ImmTier = 'Model Tier A' | 'Model Tier B' | 'Model Tier C';
 
 export type Sector = 
   | 'Agro-Industrial'
@@ -46,9 +49,10 @@ export interface Issuer {
   targetRaiseUSD: number;
   targetRaiseETB: number;
   preMoneyValuationUSD: number;
-  ecmaStatus: EcmaStatus;
+  eligibilityStatus: EligibilityStatus;
+  ecmaStatus?: EligibilityStatus; // Optional alias for compatibility
   immScore: number; // composite 0 - 100
-  immTier: 'Tier-A (Prime Institutional)' | 'Tier-B (High Yield Qualified)' | 'Tier-C (Structured Anchor Required)';
+  immTier: ImmTier;
   subScores: SubScores;
   financials: IssuerFinancials;
   tranches: TrancheBreakdown;
@@ -86,7 +90,7 @@ export interface AuctionOrder {
   status: 'Matched' | 'Pending Call' | 'Settled DvP';
 }
 
-export interface EcmaAuditLog {
+export interface RegulatoryObserverLog {
   id: string;
   directiveCode: string;
   subject: string;
@@ -96,3 +100,5 @@ export interface EcmaAuditLog {
   complianceRating: 'COMPLIANT' | 'FLAGGED_EXCESS_FX' | 'UNDER_REVIEW' | 'RE-AUDIT_CLEARED';
   auditorId: string;
 }
+
+export type EcmaAuditLog = RegulatoryObserverLog; // Backwards-compatibility alias
